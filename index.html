@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Dog Edit™ – a calming gut health chew for dogs. Clean-label, vet-reviewed, and made in the USA. Happy Gut. Happy Dog.">
+  <meta name="description" content="The Dog Edit™ – calming gut health chews for dogs. Clean-label, vet-reviewed, and made in the USA.">
   <meta property="og:title" content="The Dog Edit™ by Wagging Tails Happy Barks">
   <meta property="og:description" content="Gut + Mood chews for dogs. Calmer tummies, happier pups.">
   <meta property="og:image" content="logo-2x.png">
@@ -106,6 +106,16 @@
     .benefit h3 {
       margin-bottom: 0.5rem;
     }
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .marquee video {
+      width: 100%;
+      max-width: 1280px;
+    }
     .footer {
       text-align: center;
       font-size: 0.9rem;
@@ -127,8 +137,9 @@
 
   <section class="hero">
     <div class="hero-image">
-      <!-- Replace placeholder image with chewing_dog_hero.mp4 when ready -->
-      <img src="logo-2x.png" alt="Placeholder for dog hero animation">
+      <video autoplay loop muted playsinline width="100%">
+        <source src="chewing_dog_hero.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="hero-content">
       <h1>The Dog Edit™</h1>
@@ -155,6 +166,12 @@
       </div>
     </div>
   </section>
+
+  <div class="marquee">
+    <video autoplay loop muted playsinline>
+      <source src="scrolling_marquee.mp4" type="video/mp4">
+    </video>
+  </div>
 
   <div class="footer">
     <img src="logo-2x.png" alt="Wagging Tails Happy Barks logo">

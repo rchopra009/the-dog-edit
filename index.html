@@ -6,7 +6,7 @@
   <meta name="description" content="The Dog Edit™ – a calming gut health chew for dogs. Clean-label, vet-reviewed, and made in the USA. Happy Gut. Happy Dog.">
   <meta property="og:title" content="The Dog Edit™ by Wagging Tails Happy Barks">
   <meta property="og:description" content="Gut + Mood chews for dogs. Calmer tummies, happier pups.">
-  <meta property="og:image" content="feeding_guide_visual.png">
+  <meta property="og:image" content="logo-2x.png">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <title>The Dog Edit™ | Wagging Tails Happy Barks</title>
@@ -46,115 +46,71 @@
       padding: 0.5rem 1rem;
       border-radius: 999px;
     }
-    header {
+    .hero {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex-wrap: wrap;
       align-items: center;
-      text-align: center;
-      background: linear-gradient(145deg, #fff9f0, #f7efe6);
-      padding: 3rem 1rem;
+      justify-content: center;
+      gap: 2rem;
+      padding: 4rem 2rem;
     }
-    header h1 {
-      font-size: 2.5rem;
+    .hero-image, .hero-content {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+    .hero-image video, .hero-image img {
+      max-width: 100%;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .hero-content h1 {
+      font-size: 2.8rem;
       margin-bottom: 1rem;
     }
-    header p {
+    .hero-content p {
       font-size: 1.25rem;
-      max-width: 700px;
+      margin-bottom: 1.5rem;
     }
-    .hero-video {
-      margin-top: 2rem;
-      max-width: 540px;
-      width: 100%;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    .hero-content button {
+      background: #ff7300;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
     }
     .section {
-      padding: 2.5rem 1rem;
+      padding: 3rem 1rem;
       text-align: center;
     }
     .section h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
     }
-    .split-section {
+    .benefits-grid {
       display: flex;
       flex-wrap: wrap;
+      gap: 2rem;
       justify-content: center;
-      gap: 1.5rem;
       margin-top: 2rem;
     }
-    .card {
+    .benefit {
       background: #fff;
       border-radius: 16px;
       padding: 2rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      width: 260px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 280px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    }
-    .card .price {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin: 0.5rem 0;
-    }
-    .card button {
-      margin-top: auto;
-      background-color: #222;
-      color: #fff;
-      border: none;
-      border-radius: 30px;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      width: 100%;
-      max-width: 200px;
-    }
-    .card button:hover {
-      background: #ff7300;
-    }
-    .highlight-data {
-      font-size: 1.1rem;
-      background: #fff7ea;
-      border-radius: 12px;
-      padding: 1rem;
-      line-height: 1.5;
-    }
-    form input[type="email"] {
-      padding: 0.75rem;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      margin-right: 0.5rem;
-      width: 250px;
-    }
-    form button[type="submit"] {
-      background: #ff7300;
-      color: #fff;
-      padding: 0.75rem 1.25rem;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
+    .benefit h3 {
+      margin-bottom: 0.5rem;
     }
     .footer {
       text-align: center;
       font-size: 0.9rem;
       color: #888;
       padding: 2rem 1rem 4rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
     }
     .footer img {
       width: 100px;
@@ -169,72 +125,35 @@
     <a href="#" class="cta-nav">Shop Now</a>
   </nav>
 
-  <header>
-    <h1>The Dog Edit™</h1>
-    <p>Gut + Mood. A clean-label, science-backed daily chew for calmer, healthier dogs.</p>
-    <div class="hero-video">
-      <video autoplay loop muted playsinline width="100%">
-        <source src="chewing_dog_hero.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+  <section class="hero">
+    <div class="hero-image">
+      <!-- Replace placeholder image with chewing_dog_hero.mp4 when ready -->
+      <img src="logo-2x.png" alt="Placeholder for dog hero animation">
     </div>
-  </header>
-
-  <section class="section container">
-    <h2>How Long Does One Pouch Last?</h2>
-    <p>Each pouch contains 60 chews — a full month supply for a medium-sized dog (2 chews/day). Adjust for your dog’s size.</p>
+    <div class="hero-content">
+      <h1>The Dog Edit™</h1>
+      <p>Gut + Mood. A clean-label, science-backed daily chew for calmer, healthier dogs.</p>
+      <button>Try the Founding Pack</button>
+    </div>
   </section>
 
   <section class="section">
-    <video autoplay loop muted playsinline width="100%">
-      <source src="scrolling_marquee.mp4" type="video/mp4">
-    </video>
-  </section>
-
-  <section class="section container">
-    <h2>Backed by Research</h2>
-    <div class="split-section">
-      <div class="card highlight-data">📈 <strong>332% Growth</strong> in postbiotic pet products</div>
-      <div class="card highlight-data">🧠 <strong>70% Immunity</strong> lives in your dog’s gut</div>
-      <div class="card highlight-data">🌼 <strong>Chamomile</strong> supports natural calm</div>
-    </div>
-  </section>
-
-  <section class="section container" id="story">
-    <h2>Our Story 🐾</h2>
-    <p>We started Wagging Tails Happy Barks™ because we couldn’t find a clean, gut-focused treat that actually calmed our dogs and didn’t mess with their digestion.<br><br>
-    Between fireworks, belly issues, and anxiety when we left home, nothing seemed to help — until we met a holistic vet who introduced us to postbiotics and functional botanicals like chamomile.<br><br>
-    The Dog Edit™ is our daily ritual — backed by science, made with intention, and created to bring more calm, more play, and more tail wags to pups everywhere.</p>
-  </section>
-
-  <section class="section container">
-    <h2>Join Our Pack 🐶</h2>
-    <p>Get 10% off your first order and be the first to know about new drops.</p>
-    <form action="#" method="post">
-      <input type="email" placeholder="Your email" required>
-      <button type="submit">Subscribe</button>
-    </form>
-  </section>
-
-  <section class="section container">
-    <h2>Happy Tails 🐾</h2>
-    <div class="split-section">
-      <div class="card">
-        <p><strong>“Luna’s gut issues disappeared in 2 weeks.”</strong><br>— Sarah, Goldendoodle Mom</p>
+    <h2>Why It Works</h2>
+    <p>Gut Health Meets Calm — Backed by Science. Every ingredient has a purpose.</p>
+    <div class="benefits-grid">
+      <div class="benefit">
+        <h3>Pumpkin</h3>
+        <p>Rich in fiber to support digestion and firmer stools. Dogs love the taste.</p>
       </div>
-      <div class="card">
-        <p><strong>“Oscar’s anxiety has improved so much.”</strong><br>— Kevin, Aussie Dad</p>
+      <div class="benefit">
+        <h3>Chamomile</h3>
+        <p>Helps reduce stress and support natural calm — especially during separation, travel, or fireworks.</p>
       </div>
-      <div class="card">
-        <p><strong>“Baxter’s stool and itching? Solved.”</strong><br>— Emily, Beagle Parent</p>
+      <div class="benefit">
+        <h3>Postbiotics</h3>
+        <p>Evidence-backed gut compounds that support immune balance and nutrient absorption.</p>
       </div>
     </div>
-  </section>
-
-  <section class="section container">
-    <h2>Settle Their Belly. Soothe Their Soul.</h2>
-    <p>Formulated by dog lovers, made in the USA. Nothing artificial — ever.</p>
-    <button>Try The Dog Edit™</button>
   </section>
 
   <div class="footer">

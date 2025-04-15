@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Dog Edit™ – a calming gut health chew for dogs. Clean-label, vet-reviewed, and made in the USA. Happy Gut. Happy Dog.">
+  <meta property="og:title" content="The Dog Edit™ by Wagging Tails Happy Barks">
+  <meta property="og:description" content="Gut + Mood chews for dogs. Calmer tummies, happier pups.">
+  <meta property="og:image" content="feeding_guide_visual.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <title>The Dog Edit™ | Wagging Tails Happy Barks</title>
   <style>
     body {
@@ -50,7 +56,7 @@
       padding: 3rem 1rem;
     }
     header h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
     }
     header p {
@@ -96,9 +102,6 @@
       transform: translateY(-5px);
       box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     }
-    .card h3 {
-      margin-top: 0;
-    }
     .card .price {
       font-size: 1.2rem;
       font-weight: bold;
@@ -126,45 +129,6 @@
       border-radius: 12px;
       padding: 1rem;
       line-height: 1.5;
-    }
-    .highlight-data strong {
-      display: block;
-      font-size: 1.3rem;
-      margin-bottom: 0.3rem;
-    }
-    .product-cta {
-      background: #222;
-      color: #fff;
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-    .product-cta button {
-      background: #fff;
-      color: #222;
-      font-weight: bold;
-      padding: 1rem 2rem;
-      border-radius: 999px;
-      border: none;
-      font-size: 1.1rem;
-      transition: all 0.3s ease;
-    }
-    .product-cta button:hover {
-      background: #ff7300;
-      color: #fff;
-    }
-    .sticky-cta {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 999;
-      background: #ff7300;
-      color: white;
-      padding: 1rem 1.5rem;
-      border-radius: 40px;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      border: none;
-      cursor: pointer;
     }
     form input[type="email"] {
       padding: 0.75rem;
@@ -210,7 +174,7 @@
     <p>Gut + Mood. A clean-label, science-backed daily chew for calmer, healthier dogs.</p>
     <div class="hero-video">
       <video autoplay loop muted playsinline width="100%">
-        <source src="hero_dog_breathing_loop.mp4" type="video/mp4">
+        <source src="chewing_dog_hero.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
@@ -240,6 +204,16 @@
     </div>
   </section>
 
+  <section class="section container">
+    <h2>How Long Does One Pouch Last?</h2>
+    <p>Each pouch contains 60 chews — a full month supply for a medium-sized dog (2 chews/day). Adjust for your dog’s size below.</p>
+  </section>
+
+  <section class="section container">
+    <h2>How Much Should My Dog Take?</h2>
+    <img src="feeding_guide_visual.png" alt="Dog feeding guide by size: Small 1 chew, Medium 2, Large 3, X-Large 4" style="max-width:100%; border-radius:16px; box-shadow:0 5px 15px rgba(0,0,0,0.05);">
+  </section>
+
   <section class="section">
     <video autoplay loop muted playsinline width="100%">
       <source src="scrolling_marquee.mp4" type="video/mp4">
@@ -260,8 +234,15 @@
     <p>Postbiotics are the beneficial compounds left behind after probiotics do their job. They help maintain a healthy gut microbiome and strengthen your dog’s immune response — all without needing to keep the supplement refrigerated.</p>
   </section>
 
+  <section class="section container" id="story">
+    <h2>Our Story 🐾</h2>
+    <p>We started Wagging Tails Happy Barks™ because we couldn’t find a clean, gut-focused treat that actually calmed our dogs and didn’t mess with their digestion.<br><br>
+    Between fireworks, belly issues, and anxiety when we left home, nothing seemed to help — until we met a holistic vet who introduced us to postbiotics and functional botanicals like chamomile.<br><br>
+    The Dog Edit™ is our daily ritual — backed by science, made with intention, and created to bring more calm, more play, and more tail wags to pups everywhere.</p>
+  </section>
+
   <section class="section container">
-    <h2>Join Our Pack 🐾</h2>
+    <h2>Join Our Pack 🐶</h2>
     <p>Get 10% off your first order and be the first to know about new drops.</p>
     <form action="#" method="post">
       <input type="email" placeholder="Your email" required>
@@ -269,8 +250,8 @@
     </form>
   </section>
 
-  <section class="section container" id="testimonials">
-    <h2>Happy Tails 🐶</h2>
+  <section class="section container">
+    <h2>Happy Tails 🐾</h2>
     <div class="split-section">
       <div class="card">
         <p><strong>“Luna’s gut issues disappeared in 2 weeks.”</strong><br>— Sarah, Goldendoodle Mom</p>

@@ -17,6 +17,29 @@
       padding: 0 1rem;
       margin: 0 auto;
     }
+    nav {
+      position: sticky;
+      top: 0;
+      background: #fff9f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    nav a {
+      text-decoration: none;
+      color: #222;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    nav .cta-nav {
+      background: #ff7300;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+    }
     header {
       display: flex;
       flex-direction: column;
@@ -76,8 +99,13 @@
     .card h3 {
       margin-top: 0;
     }
+    .card .price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
     .card button {
-      margin-top: 1rem;
+      margin-top: auto;
       background-color: #222;
       color: #fff;
       border: none;
@@ -155,6 +183,12 @@
   </style>
 </head>
 <body>
+  <nav class="container">
+    <a href="#">Wagging Tails</a>
+    <a href="#story">Our Story</a>
+    <a href="#" class="cta-nav">Shop Now</a>
+  </nav>
+
   <header>
     <h1>The Dog Edit™</h1>
     <p>Gut + Mood. A clean-label, science-backed daily chew for calmer, healthier dogs.</p>
@@ -170,18 +204,20 @@
     <h2>One Chew. Two Big Wins.</h2>
     <div class="split-section">
       <div class="card">
-        <h3>Gut + Immune</h3>
-        <p>Pumpkin and postbiotics support firmer stools, regular digestion, and immune balance.</p>
+        <h3>1 Pouch</h3>
+        <p class="price">$29</p>
+        <p>Try it once. Great for first-timers.</p>
         <button>Add to Cart</button>
       </div>
       <div class="card">
-        <h3>Calm + Mood</h3>
-        <p>Chamomile and L-Theanine help reduce stress and anxious behavior naturally.</p>
+        <h3>3-Pack Bundle</h3>
+        <p class="price">$79 <span style="color:green; font-size:0.9rem">(Save 10%)</span></p>
+        <p>Stock up and save — great for multi-dog homes.</p>
         <button>Bundle & Save</button>
       </div>
       <div class="card" style="border: 2px solid #ff7300;">
         <h3>Subscribe & Save</h3>
-        <p><strong>$24.65/mo</strong> <br><span style="color:green">Save 15%</span></p>
+        <p class="price">$24.65/mo <span style="color:green; font-size:0.9rem">(Save 15%)</span></p>
         <p>Delivered monthly. Cancel anytime.</p>
         <button style="background:#ff7300;">Start Subscription</button>
       </div>
@@ -200,6 +236,21 @@
   <section class="section container">
     <h2>What Are Postbiotics?</h2>
     <p>Postbiotics are the beneficial compounds left behind after probiotics do their job. They help maintain a healthy gut microbiome and strengthen your dog’s immune response — all without needing to keep the supplement refrigerated.</p>
+  </section>
+
+  <section class="section container" id="testimonials">
+    <h2>Happy Tails 🐾</h2>
+    <div class="split-section">
+      <div class="card">
+        <p><strong>“Luna’s gut issues disappeared in 2 weeks.”</strong><br>— Sarah, Goldendoodle Mom</p>
+      </div>
+      <div class="card">
+        <p><strong>“Oscar’s anxiety has improved so much.”</strong><br>— Kevin, Aussie Dad</p>
+      </div>
+      <div class="card">
+        <p><strong>“Baxter’s stool and itching? Solved.”</strong><br>— Emily, Beagle Parent</p>
+      </div>
+    </div>
   </section>
 
   <section class="product-cta">

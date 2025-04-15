@@ -166,6 +166,22 @@
       border: none;
       cursor: pointer;
     }
+    form input[type="email"] {
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-right: 0.5rem;
+      width: 250px;
+    }
+    form button[type="submit"] {
+      background: #ff7300;
+      color: #fff;
+      padding: 0.75rem 1.25rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
     .footer {
       text-align: center;
       font-size: 0.9rem;
@@ -194,7 +210,7 @@
     <p>Gut + Mood. A clean-label, science-backed daily chew for calmer, healthier dogs.</p>
     <div class="hero-video">
       <video autoplay loop muted playsinline width="100%">
-        <source src="hero-dog-loop.mp4" type="video/mp4">
+        <source src="hero_dog_breathing_loop.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
@@ -224,6 +240,12 @@
     </div>
   </section>
 
+  <section class="section">
+    <video autoplay loop muted playsinline width="100%">
+      <source src="scrolling_marquee.mp4" type="video/mp4">
+    </video>
+  </section>
+
   <section class="section container">
     <h2>Backed by Research</h2>
     <div class="split-section">
@@ -238,8 +260,17 @@
     <p>Postbiotics are the beneficial compounds left behind after probiotics do their job. They help maintain a healthy gut microbiome and strengthen your dog’s immune response — all without needing to keep the supplement refrigerated.</p>
   </section>
 
+  <section class="section container">
+    <h2>Join Our Pack 🐾</h2>
+    <p>Get 10% off your first order and be the first to know about new drops.</p>
+    <form action="#" method="post">
+      <input type="email" placeholder="Your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
   <section class="section container" id="testimonials">
-    <h2>Happy Tails 🐾</h2>
+    <h2>Happy Tails 🐶</h2>
     <div class="split-section">
       <div class="card">
         <p><strong>“Luna’s gut issues disappeared in 2 weeks.”</strong><br>— Sarah, Goldendoodle Mom</p>

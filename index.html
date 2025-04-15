@@ -64,6 +64,9 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.05);
       width: 260px;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .card:hover {
@@ -83,6 +86,8 @@
       font-size: 1rem;
       cursor: pointer;
       transition: background 0.3s ease;
+      width: 100%;
+      max-width: 200px;
     }
     .card button:hover {
       background: #ff7300;
@@ -137,7 +142,11 @@
       text-align: center;
       font-size: 0.9rem;
       color: #888;
-      padding: 2rem;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
     .footer img {
       width: 100px;
@@ -163,10 +172,18 @@
       <div class="card">
         <h3>Gut + Immune</h3>
         <p>Pumpkin and postbiotics support firmer stools, regular digestion, and immune balance.</p>
+        <button>Add to Cart</button>
       </div>
       <div class="card">
         <h3>Calm + Mood</h3>
         <p>Chamomile and L-Theanine help reduce stress and anxious behavior naturally.</p>
+        <button>Bundle & Save</button>
+      </div>
+      <div class="card" style="border: 2px solid #ff7300;">
+        <h3>Subscribe & Save</h3>
+        <p><strong>$24.65/mo</strong> <br><span style="color:green">Save 15%</span></p>
+        <p>Delivered monthly. Cancel anytime.</p>
+        <button style="background:#ff7300;">Start Subscription</button>
       </div>
     </div>
   </section>
@@ -177,30 +194,6 @@
       <div class="card highlight-data">📈 <strong>332% Growth</strong> in postbiotic pet products</div>
       <div class="card highlight-data">🧠 <strong>70% Immunity</strong> lives in your dog’s gut</div>
       <div class="card highlight-data">🌼 <strong>Chamomile</strong> supports natural calm</div>
-    </div>
-  </section>
-
-  <section class="section container">
-    <h2>Choose Your Plan</h2>
-    <div class="split-section">
-      <div class="card">
-        <h3>1 Pouch</h3>
-        <p><strong>$29</strong></p>
-        <p>Try it once. Great for first-timers.</p>
-        <button>Add to Cart</button>
-      </div>
-      <div class="card">
-        <h3>3-Pack Bundle</h3>
-        <p><strong>$79</strong> <br><span style="color:green">Save 10%</span></p>
-        <p>Stock up and save — great for multi-dog homes.</p>
-        <button>Bundle & Save</button>
-      </div>
-      <div class="card" style="border: 2px solid #ff7300;">
-        <h3>Subscribe & Save</h3>
-        <p><strong>$24.65/mo</strong> <br><span style="color:green">Save 15%</span></p>
-        <p>Delivered monthly. Cancel anytime.</p>
-        <button style="background:#ff7300;">Start Subscription</button>
-      </div>
     </div>
   </section>
 
@@ -219,7 +212,7 @@
 
   <div class="footer">
     <img src="logo-2x.png" alt="Wagging Tails Happy Barks logo">
-    &copy; 2025 Wagging Tails Happy Barks™ | The Dog Edit™ | Built with purpose.
+    <p>&copy; 2025 Wagging Tails Happy Barks™ | The Dog Edit™ | Built with purpose.</p>
   </div>
 </body>
 </html>

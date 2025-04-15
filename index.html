@@ -10,10 +10,11 @@
       font-family: 'Helvetica Neue', sans-serif;
       background: #faf8f3;
       color: #222;
+      scroll-behavior: smooth;
     }
     .container {
-      max-width: 1200px;
-      padding: 0 1.25rem;
+      max-width: 1100px;
+      padding: 0 1rem;
       margin: 0 auto;
     }
     header {
@@ -23,10 +24,10 @@
       align-items: center;
       text-align: center;
       background: linear-gradient(145deg, #fff9f0, #f7efe6);
-      padding: 4rem 2rem;
+      padding: 3rem 1rem;
     }
     header h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
     }
     header p {
@@ -35,14 +36,14 @@
     }
     .hero-video {
       margin-top: 2rem;
-      max-width: 720px;
+      max-width: 540px;
       width: 100%;
       border-radius: 24px;
       overflow: hidden;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     }
     .section {
-      padding: 3rem 1rem;
+      padding: 2.5rem 1rem;
       text-align: center;
     }
     .section h2 {
@@ -53,7 +54,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
+      gap: 1.5rem;
       margin-top: 2rem;
     }
     .card {
@@ -61,7 +62,13 @@
       border-radius: 16px;
       padding: 2rem;
       box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      width: 280px;
+      width: 260px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     }
     .card h3 {
       margin-top: 0;
@@ -75,6 +82,10 @@
       padding: 0.75rem 1.5rem;
       font-size: 1rem;
       cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .card button:hover {
+      background: #ff7300;
     }
     .highlight-data {
       font-size: 1.1rem;
@@ -91,7 +102,7 @@
     .product-cta {
       background: #222;
       color: #fff;
-      padding: 4rem 2rem;
+      padding: 3rem 1rem;
       text-align: center;
     }
     .product-cta button {
@@ -102,6 +113,25 @@
       border-radius: 999px;
       border: none;
       font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+    .product-cta button:hover {
+      background: #ff7300;
+      color: #fff;
+    }
+    .sticky-cta {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      background: #ff7300;
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 40px;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      border: none;
+      cursor: pointer;
     }
     .footer {
       text-align: center;
@@ -174,11 +204,18 @@
     </div>
   </section>
 
+  <section class="section container">
+    <h2>What Are Postbiotics?</h2>
+    <p>Postbiotics are the beneficial compounds left behind after probiotics do their job. They help maintain a healthy gut microbiome and strengthen your dog’s immune response — all without needing to keep the supplement refrigerated.</p>
+  </section>
+
   <section class="product-cta">
     <h2>Settle Their Belly. Soothe Their Soul.</h2>
     <p>Formulated by dog lovers, made in the USA. Nothing artificial — ever.</p>
     <button>Try The Dog Edit™</button>
   </section>
+
+  <button class="sticky-cta">Start My Dog’s Plan</button>
 
   <div class="footer">
     <img src="logo-2x.png" alt="Wagging Tails Happy Barks logo">

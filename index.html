@@ -1,1411 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The Dog Edit™ - A 2-in-1 daily chew for gut health and calm behavior. Clean-label. Vet-reviewed. Trusted by dog parents everywhere." />
-  <title>The Dog Edit™ | Gut + Mood Support</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #3a5a40;
-      --primary-light: #588157;
-      --secondary: #ff9e00;
-      --background: #f8f4e9;
-      --text: #2f3e46;
-      --light-text: #6c757d;
-      --cream: #f8f0dc;
-      --white: #ffffff;
-      --border-radius: 12px;
-      --shadow: 0 10px 30px rgba(0,0,0,0.08);
-      --transition: all 0.3s ease;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--background);
-      color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-    
-    h1, h2, h3, h4 {
-      font-family: 'Playfair Display', serif;
-      line-height: 1.3;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-    
-    .btn {
-      display: inline-block;
-      background: var(--secondary);
-      color: var(--white);
-      font-weight: 600;
-      border: none;
-      border-radius: 50px;
-      padding: 1rem 2.5rem;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: var(--transition);
-      text-decoration: none;
-      box-shadow: 0 4px 15px rgba(255, 158, 0, 0.3);
-    }
-    
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(255, 158, 0, 0.3);
-      background: #ffaa33;
-    }
-    
-    .btn-outline {
-      background: transparent;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-      box-shadow: none;
-    }
-    
-    .btn-outline:hover {
-      background: var(--primary);
-      color: var(--white);
-      box-shadow: 0 6px 15px rgba(58, 90, 64, 0.2);
-    }
-    
-    /* Navigation */
-    nav {
-      padding: 1.5rem 2rem;
-      background: var(--white);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.04);
-    }
-    
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: var(--primary);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    .logo svg {
-      width: 30px;
-      height: 30px;
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-    }
-    
-    .nav-links a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-      transition: var(--transition);
-      position: relative;
-    }
-    
-    .nav-links a:after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -5px;
-      left: 0;
-      background: var(--secondary);
-      transition: var(--transition);
-    }
-    
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-    
-    .nav-links a:hover:after {
-      width: 100%;
-    }
-    
-    .mobile-menu {
-      display: none;
-      cursor: pointer;
-    }
-    
-    /* Hero Section */
-    .hero {
-      padding: 6rem 2rem;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .hero-content {
-      flex: 1;
-      max-width: 600px;
-      position: relative;
-      z-index: 2;
-    }
-    
-    .hero-media {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      position: relative;
-    }
-    
-    .hero-circle {
-      position: absolute;
-      width: 450px;
-      height: 450px;
-      border-radius: 50%;
-      background: rgba(255, 158, 0, 0.08);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: inset 0 0 20px rgba(255, 158, 0, 0.2);
-      z-index: 1;
-    }
-    
-    .hero-circle:before {
-      content: '';
-      position: absolute;
-      width: 550px;
-      height: 550px;
-      border-radius: 50%;
-      border: 1px solid var(--secondary);
-      opacity: 0.1;
-    }
-    
-    .product-image {
-      height: 400px;
-      position: relative;
-      z-index: 2;
-      filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));
-    }
-    
-    .dog-image {
-      position: absolute;
-      height: 400px;
-      left: -100px;
-      bottom: -30px;
-      z-index: 1;
-      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
-    }
-    
-    .floating {
-      position: absolute;
-      z-index: 3;
-    }
-    
-    .pumpkin {
-      width: 70px;
-      top: 50px;
-      right: 100px;
-      animation: float 6s ease-in-out infinite;
-    }
-    
-    .chamomile {
-      width: 50px;
-      bottom: 80px;
-      right: 30px;
-      animation: float 7s ease-in-out infinite;
-    }
-    
-    .chamomile2 {
-      width: 40px;
-      top: 120px;
-      left: 80px;
-      animation: float 8s ease-in-out infinite;
-    }
-    
-    .pumpkin2 {
-      width: 60px;
-      bottom: 30px;
-      left: 30px;
-      animation: float 5s ease-in-out infinite;
-    }
-    
-    @keyframes float {
-      0% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-15px) rotate(5deg); }
-      100% { transform: translateY(0px) rotate(0deg); }
-    }
-    
-    .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1.5rem;
-      color: var(--primary);
-    }
-    
-    .hero p {
-      font-size: 1.25rem;
-      color: var(--light-text);
-      margin-bottom: 2rem;
-      max-width: 500px;
-    }
-    
-    .hero-stats {
-      display: flex;
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-    
-    .stat {
-      text-align: center;
-    }
-    
-    .stat-number {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-    }
-    
-    .stat-text {
-      font-size: 0.9rem;
-      color: var(--light-text);
-    }
-    
-    /* Benefits Section */
-    .benefits {
-      padding: 6rem 2rem;
-      background: var(--white);
-    }
-    
-    .section-heading {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-    
-    .section-heading h2 {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-    
-    .section-heading p {
-      max-width: 600px;
-      margin: 0 auto;
-      color: var(--light-text);
-    }
-    
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    
-    .benefit-card {
-      background: var(--cream);
-      border-radius: var(--border-radius);
-      padding: 3rem 2rem;
-      text-align: center;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .benefit-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow);
-    }
-    
-    .benefit-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: var(--primary);
-      position: relative;
-      z-index: 2;
-    }
-    
-    .benefit-card p {
-      color: var(--light-text);
-      position: relative;
-      z-index: 2;
-    }
-    
-    .benefit-icon {
-      width: 80px;
-      height: 80px;
-      background: var(--white);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 2rem;
-      position: relative;
-      z-index: 2;
-    }
-    
-    .benefit-bg {
-      position: absolute;
-      top: -30px;
-      right: -30px;
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      opacity: 0.1;
-    }
-    
-    .bg-1 { background: #FFA500; }
-    .bg-2 { background: #9DC88D; }
-    .bg-3 { background: #6B7DB3; }
-    
-    /* Science Section */
-    .science {
-      padding: 6rem 2rem;
-      background: linear-gradient(to right, var(--primary), var(--primary-light));
-      color: var(--white);
-    }
-    
-    .science-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .science h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-    
-    .science-item {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-    
-    .science-number {
-      font-size: 4rem;
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.2);
-    }
-    
-    .science-content {
-      flex: 1;
-    }
-    
-    .science-content h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .science-content p {
-      opacity: 0.9;
-      font-size: 1.1rem;
-    }
-    
-    /* Pricing Section */
-    .pricing {
-      padding: 6rem 2rem;
-      background: var(--cream);
-    }
-    
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    
-    .pricing-card {
-      background: var(--white);
-      border-radius: var(--border-radius);
-      padding: 3rem 2rem;
-      text-align: center;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .pricing-card.featured {
-      box-shadow: var(--shadow);
-      transform: scale(1.05);
-      border: 2px solid var(--secondary);
-    }
-    
-    .pricing-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow);
-    }
-    
-    .pricing-card.featured:hover {
-      transform: translateY(-10px) scale(1.05);
-    }
-    
-    .pricing-label {
-      position: absolute;
-      top: 20px;
-      right: -30px;
-      background: var(--secondary);
-      color: var(--white);
-      padding: 5px 30px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      transform: rotate(45deg);
-    }
-    
-    .pricing-title {
-      font-size: 1.3rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-    
-    .pricing-price {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 1rem;
-    }
-    
-    .pricing-period {
-      font-size: 1rem;
-      color: var(--light-text);
-      margin-bottom: 2rem;
-      display: block;
-    }
-    
-    .pricing-features {
-      margin-bottom: 2rem;
-      list-style-type: none;
-    }
-    
-    .pricing-features li {
-      padding: 0.5rem 0;
-      color: var(--light-text);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-    
-    .pricing-features li:last-child {
-      border-bottom: none;
-    }
-    
-    /* Testimonials */
-    .testimonials {
-      padding: 6rem 2rem;
-      background: var(--white);
-    }
-    
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 4rem;
-    }
-    
-    .testimonial-card {
-      background: var(--cream);
-      border-radius: var(--border-radius);
-      padding: 2rem;
-      position: relative;
-      transition: var(--transition);
-    }
-    
-    .testimonial-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow);
-    }
-    
-    .testimonial-quote {
-      position: absolute;
-      top: -20px;
-      left: 30px;
-      width: 50px;
-      height: 50px;
-      background: var(--secondary);
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: var(--white);
-      font-size: 1.5rem;
-    }
-    
-    .testimonial-text {
-      font-style: italic;
-      margin-bottom: 1.5rem;
-      color: var(--text);
-    }
-    
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    
-    .testimonial-avatar {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: var(--primary-light);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: var(--white);
-      font-weight: 600;
-      font-size: 1.2rem;
-    }
-    
-    .testimonial-info h4 {
-      font-size: 1.1rem;
-      color: var(--primary);
-    }
-    
-    .testimonial-info p {
-      font-size: 0.9rem;
-      color: var(--light-text);
-    }
-    
-    /* Story Section */
-    .story {
-      padding: 6rem 2rem;
-      background: var(--background);
-    }
-    
-    .story-container {
-      display: flex;
-      align-items: center;
-      gap: 4rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    
-    .story-content {
-      flex: 1;
-    }
-    
-    .story-content h2 {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-    }
-    
-    .story-content p {
-      margin-bottom: 2rem;
-      color: var(--light-text);
-      font-size: 1.1rem;
-    }
-    
-    .story-image {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-    }
-    
-    .story-image img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-    }
-    
-    /* FAQ Section */
-    .faq {
-      padding: 6rem 2rem;
-      background: var(--cream);
-    }
-    
-    .faq-item {
-      background: var(--white);
-      border-radius: var(--border-radius);
-      padding: 1.5rem 2rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.03);
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    
-    .faq-item:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow);
-    }
-    
-    .faq-question {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--primary);
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-    
-    .faq-answer {
-      margin-top: 1rem;
-      color: var(--light-text);
-      display: none;
-    }
-    
-    .faq-item.active .faq-answer {
-      display: block;
-    }
-    
-    /* Footer */
-    footer {
-      background: var(--primary);
-      color: var(--white);
-      padding: 4rem 2rem 2rem;
-    }
-    
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 3rem;
-      margin-bottom: 3rem;
-    }
-    
-    .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      display: block;
-    }
-    
-    .footer-about p {
-      opacity: 0.8;
-      margin-bottom: 1.5rem;
-    }
-    
-    .social-links {
-      display: flex;
-      gap: 1rem;
-    }
-    
-    .social-link {
-      width: 40px;
-      height: 40px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: var(--transition);
-    }
-    
-    .social-link:hover {
-      background: var(--secondary);
-      transform: translateY(-3px);
-    }
-    
-    .footer-heading {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-      position: relative;
-      padding-bottom: 0.5rem;
-    }
-    
-    .footer-heading:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 50px;
-      height: 2px;
-      background: var(--secondary);
-    }
-    
-    .footer-links {
-      list-style-type: none;
-    }
-    
-    .footer-links li {
-      margin-bottom: 0.8rem;
-    }
-    
-    .footer-links a {
-      color: rgba(255,255,255,0.8);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    
-    .footer-links a:hover {
-      color: var(--secondary);
-      padding-left: 5px;
-    }
-    
-    .copyright {
-      text-align: center;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      font-size: 0.9rem;
-      opacity: 0.7;
-    }
-    
-    .sticky-cta {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: var(--white);
-      color: var(--primary);
-      border: none;
-      border-radius: 50px;
-      padding: 1rem 2rem;
-      font-weight: 600;
-      font-size: 1rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: var(--transition);
-      text-decoration: none;
-    }
-    
-    .sticky-cta:hover {
-      background: var(--secondary);
-      color: var(--white);
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(255, 158, 0, 0.2);
-    }
-    
-    /* Marquee */
-    .marquee-container {
-      background: var(--primary-light);
-      color: var(--white);
-      padding: 1rem 0;
-      overflow: hidden;
-      position: relative;
-    }
-    
-    .marquee-content {
-      display: flex;
-      animation: marquee 30s linear infinite;
-      white-space: nowrap;
-    }
-    
-    .marquee-item {
-      display: flex;
-      align-items: center;
-      margin-right: 3rem;
-      font-weight: 600;
-    }
-    
-    .marquee-item svg {
-      margin-right: 0.5rem;
-    }
-    
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 1024px) {
-      .hero {
-        flex-direction: column;
-        padding: 4rem 2rem;
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The Dog Edit™ - A 2-in-1 daily chew for gut health and calm behavior. Clean-label. Vet-reviewed. Trusted by dog parents everywhere." />
+    <title>The Dog Edit™ | Happy Gut, Calm Mind for Dogs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+      /* Custom styles */
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #FEFBF6; /* Soft off-white background */
+        color: #374151; /* Dark gray text */
       }
-      
-      .hero-content {
-        text-align: center;
-        margin-bottom: 3rem;
+      /* Custom animation for the marquee */
+      .marquee-content {
+        animation: scroll 30s linear infinite;
       }
-      
-      .hero-content p {
-        margin: 0 auto 2rem;
+      @keyframes scroll {
+        0% { transform: translateX(0%); }
+        100% { transform: translateX(-50%); } /* Adjust based on content width */
       }
-      
-      .hero-stats {
-        justify-content: center;
+      /* Style for the hero video/image */
+      .hero-media {
+        box-shadow: 0 20px 40px -10px rgba(255, 115, 0, 0.2); /* Subtle orange shadow */
       }
-      
-      .story-container {
-        flex-direction: column;
+      /* Button hover effect */
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
       }
-      
-      .story-content {
-        text-align: center;
+       /* Ensure video fits container */
+      video {
+        max-width: 100%;
+        height: auto;
       }
-    }
-    
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-      
-      .mobile-menu {
-        display: block;
-      }
-      
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      
-      .hero-circle {
-        width: 350px;
-        height: 350px;
-      }
-      
-      .product-image, .dog-image {
-        height: 300px;
-      }
-      
-      .dog-image {
-        left: -50px;
-      }
-      
-      .section-heading h2 {
-        font-size: 2rem;
-      }
-      
-      .science-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.5rem;
-      }
-      
-      .science-number {
-        font-size: 3rem;
-      }
-      
-      .pricing-card.featured {
-        transform: scale(1);
-      }
-      
-      .pricing-card.featured:hover {
-        transform: translateY(-10px);
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      
-      .hero-circle {
-        width: 280px;
-        height: 280px;
-      }
-      
-      .product-image, .dog-image {
-        height: 220px;
-      }
-      
-      .floating {
-        width: 40px !important;
-      }
-      
-      .hero-stats {
-        flex-direction: column;
-        gap: 1rem;
-      }
-    }
-  </style>
+    </style>
 </head>
-<body>
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-container">
-      <a href="#" class="logo">
-        <svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M256 64C150 64 64 150 64 256c0 106 86 192 192 192s192-86 192-192c0-106-86-192-192-192zm-9.5 384c-10 0-19.5-1.5-28.5-4.5-4-1-8-5-10-9-2-5-2-10 0-15 3-7 10-11 17-11 1.5 0 3 0 4.5.5 5.5 2 11.5 3 17 3 35.5 0 64.5-29 64.5-64.5S282 283 246.5 283c-11.5 0-22.5 3-32 8.5-21.5 13-35.5 36.5-35.5 62.5v3c0 13.5-11 24.5-24.5 24.5S130 371 130 357v-3c0-42 21.5-79.5 54-102 20-13.5 43.5-21 62.5-21 66.5 0 120.5 54 120.5 120.5S313 472 246.5 448z" fill="#3a5a40"/>
-        </svg>
-        The Dog Edit<sup>™</sup>
-      </a>
-      <div class="nav-links">
-        <a href="#benefits">Benefits</a>
-        <a href="#science">The Science</a>
-        <a href="#pricing">Shop</a>
-        <a href="#testimonials">Reviews</a>
-        <a href="#story">Our Story</a>
-      </div>
-      <div class="mobile-menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </div>
-    </div>
-  </nav>
+<body class="antialiased">
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Happy Gut.<br>Happy Dog.</h1>
-      <p>A science-backed, 2-in-1 daily chew that supports digestion & reduces stress in dogs — because when they feel better inside, their world feels better outside.</p>
-      <a href="#pricing" class="btn">Shop Now</a>
-      
-      <div class="hero-stats">
-        <div class="stat">
-          <div class="stat-number">97<span>%</span></div>
-          <div class="stat-text">Happier Dogs</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number">30<span>+</span></div>
-          <div class="stat-text">Days of Support</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number">5<span>★</span></div>
-          <div class="stat-text">Customer Reviews</div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="hero-media">
-      <div class="hero-circle"></div>
-      <!-- Using Image 2 from your prompt - the dog with product package -->
-      <img src="path/to/your/golden-retriever-product-image.jpg" alt="Golden retriever with The Dog Edit package" class="product-image">
-      
-      <!-- Using elements from the product package design -->
-      <img src="/api/placeholder/60/60" alt="Pumpkin slice" class="floating pumpkin" style="background: #ff9e00; border-radius: 50%;">
-      <img src="/api/placeholder/50/50" alt="Chamomile flower" class="floating chamomile" style="background: #fff; border-radius: 50%;">
-      <img src="/api/placeholder/50/50" alt="Chamomile flower" class="floating chamomile2" style="background: #fff; border-radius: 50%;">
-      <img src="/api/placeholder/60/60" alt="Pumpkin slice" class="floating pumpkin2" style="background: #ff9e00; border-radius: 50%;">
-    </div>
-  </section>
-  
-  <!-- Marquee -->
-  <div class="marquee-container">
-          <div class="marquee-content">
-      <div class="marquee-item">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="2"/>
-          <path d="M12 16L16 12L12 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M8 12H16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        332% growth in postbiotics
-      </div>
-      <div class="marquee-item">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="2"/>
-          <path d="M12 16L16 12L12 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M8 12H16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        70% of immunity lives in the gut
-      </div>
-      <div class="marquee-item">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="2"/>
-          <path d="M12 16L16 12L12 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M8 12H16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        Chamomile supports calm behavior
-      </div>
-      <div class="marquee-item">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="2"/>
-          <path d="M12 16L16 12L12 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M8 12H16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        Vet-reviewed formula
-      </div>
-      <div class="marquee-item">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="2"/>
-          <path d="M12 16L16 12L12 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M8 12H16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        The Dog Edit™ works
-      </div>
-    </div>
-  </div>
-  
-  <!-- Benefits Section -->
-  <section class="benefits" id="benefits">
-    <div class="container">
-      <div class="section-heading">
-        <h2>Why It Works</h2>
-        <p>Our science-backed formula targets both gut health and stress reduction simultaneously for a double benefit your dog will feel.</p>
-      </div>
-      
-      <div class="benefits-grid">
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 14C16.4183 14 20 11.3137 20 8C20 4.68629 16.4183 2 12 2C7.58172 2 4 4.68629 4 8C4 11.3137 7.58172 14 12 14Z" stroke="#ff9e00" stroke-width="2"/>
-              <path d="M12 14V22" stroke="#ff9e00" stroke-width="2" stroke-linecap="round"/>
-              <path d="M16 18H8" stroke="#ff9e00" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3>Pumpkin</h3>
-          <p>High in fiber to support healthy digestion and firm stools. Perfect for sensitive tummies and digestive issues.</p>
-          <div class="benefit-bg bg-1"></div>
-        </div>
-        
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2L14.85 8.3L22 9.3L17 14.1L18.18 21L12 17.77L5.82 21L7 14.1L2 9.3L9.15 8.3L12 2Z" stroke="#588157" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3>Chamomile</h3>
-          <p>Promotes calm behavior during stress-inducing moments like travel, vet visits, thunderstorms, or separation anxiety.</p>
-          <div class="benefit-bg bg-2"></div>
-        </div>
-        
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 11H4C2.89543 11 2 11.8954 2 13V20C2 21.1046 2.89543 22 4 22H20C21.1046 22 22 21.1046 22 20V13C22 11.8954 21.1046 11 20 11Z" stroke="#6B7DB3" stroke-width="2"/>
-              <path d="M7 11V7C7 4.23858 9.23858 2 12 2C14.7614 2 17 4.23858 17 7V11" stroke="#6B7DB3" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3>Postbiotics</h3>
-          <p>Evidence-backed nutrients that support immune balance and gut lining health without requiring refrigeration like probiotics.</p>
-          <div class="benefit-bg bg-3"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Science Section -->
-  <section class="science" id="science">
-    <div class="science-container">
-      <h2>The Science Behind The Dog Edit™</h2>
-      
-      <div class="science-item">
-        <div class="science-number">01</div>
-        <div class="science-content">
-          <h3>The Gut-Brain Connection</h3>
-          <p>Just like in humans, your dog's gut and brain are in constant communication. When gut health improves, it positively affects mood and behavior — and vice versa.</p>
-        </div>
-      </div>
-      
-      <div class="science-item">
-        <div class="science-number">02</div>
-        <div class="science-content">
-          <h3>Balanced Microbial Environment</h3>
-          <p>Postbiotics provide the benefits of probiotics in a shelf-stable form. They help maintain the delicate balance of good bacteria in your dog's digestive system.</p>
-        </div>
-      </div>
-      
-      <div class="science-item">
-        <div class="science-number">03</div>
-        <div class="science-content">
-          <h3>Natural Calm Support</h3>
-          <p>Chamomile works with your dog's natural systems to reduce cortisol (stress hormone) levels without causing drowsiness or personality changes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Pricing Section -->
-  <section class="pricing" id="pricing">
-    <div class="container">
-      <div class="section-heading">
-        <h2>Pick Your Plan</h2>
-        <p>Find the perfect option for your furry friend. All plans include free shipping and our happiness guarantee.</p>
-      </div>
-      
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <h3 class="pricing-title">Try It Once</h3>
-          <div class="pricing-price">$29</div>
-          <span class="pricing-period">One-time purchase</span>
-          <ul class="pricing-features">
-            <li>1 bag (30-day supply)</li>
-            <li>Free shipping</li>
-            <li>Money-back guarantee</li>
-          </ul>
-          <a href="#" class="btn">Buy Now</a>
-        </div>
-        
-        <div class="pricing-card featured">
-          <div class="pricing-label">Best Value</div>
-          <h3 class="pricing-title">Bundle & Save</h3>
-          <div class="pricing-price">$79</div>
-          <span class="pricing-period">One-time purchase</span>
-          <ul class="pricing-features">
-            <li>3 bags (90-day supply)</li>
-            <li>Save $8 per bag</li>
-            <li>Free shipping</li>
-            <li>Money-back guarantee</li>
-          </ul>
-          <a href="#" class="btn">Buy Now</a>
-        </div>
-        
-        <div class="pricing-card">
-          <h3 class="pricing-title">Subscribe & Save</h3>
-          <div class="pricing-price">$24</div>
-          <span class="pricing-period">Monthly subscription</span>
-          <ul class="pricing-features">
-            <li>1 bag every month</li>
-            <li>Save 17% every month</li>
-            <li>Free shipping</li>
-            <li>Pause or cancel anytime</li>
-          </ul>
-          <a href="#" class="btn btn-outline">Subscribe</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Testimonials Section -->
-  <section class="testimonials" id="testimonials">
-    <div class="container">
-      <div class="section-heading">
-        <h2>Bark of Approval</h2>
-        <p>Don't just take our word for it. Here's what real dog parents are saying about The Dog Edit™.</p>
-      </div>
-      
-      <div class="testimonial-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-quote">❝</div>
-          <p class="testimonial-text">My anxious pup is finally sleeping through storms. And her poop? Perfect. We'll never go without these chews again!</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">R</div>
-            <div class="testimonial-info">
-              <h4>Rachel M.</h4>
-              <p>Golden Retriever Mom</p>
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold text-orange-600">The Dog Edit™</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#features" class="text-gray-600 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">Features</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">Pricing</a>
+                    <a href="#story" class="text-gray-600 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">Our Story</a>
+                    <a href="#buy-now" class="cta-button bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-5 rounded-full transition duration-300 ease-in-out shadow-md text-sm">
+                        Buy Now
+                    </a>
+                </div>
+                 <div class="md:hidden">
+                     <button class="text-gray-500 hover:text-orange-600 focus:outline-none focus:text-orange-600">
+                         <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                         </svg>
+                     </button>
+                 </div>
             </div>
-          </div>
         </div>
-        
-        <div class="testimonial-card">
-          <div class="testimonial-quote">❝</div>
-          <p class="testimonial-text">Game changer. Calmer walks, better digestion, and zero fillers. Max actually looks forward to treat time now!</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">J</div>
-            <div class="testimonial-info">
-              <h4>Jordan & Max</h4>
-              <p>Border Collie Dad</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="testimonial-card">
-          <div class="testimonial-quote">❝</div>
-          <p class="testimonial-text">Three rescues with sensitive tummies, and all three LOVE these chews. No more middle-of-the-night cleanup for me!</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">S</div>
-            <div class="testimonial-info">
-              <h4>Samantha K.</h4>
-              <p>Multi-Dog Household</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Story Section -->
-  <section class="story" id="story">
-    <div class="story-container">
-      <div class="story-content">
-        <h2>Our Story</h2>
-        <p>We started The Dog Edit™ to solve a real need: a clean, science-backed dog supplement that actually does two things at once — soothe the gut and calm the mind.</p>
-        <p>As dog parents ourselves, we were tired of giving our pups multiple supplements with questionable ingredients. We wanted something simple, effective, and made with ingredients we could trust.</p>
-        <p>That's why every batch of The Dog Edit™ is made in small batches in the USA, tested for purity, and reviewed by veterinarians before it reaches your door.</p>
-        <a href="#" class="btn btn-outline">Learn More About Us</a>
-      </div>
-      
-      <div class="story-image">
-       <img src="path/to/your/wagging-tails-logo.png" alt="Wagging Tails Happy Barks Logo" width="90">
-      </div>
-    </div>
-  </section>
-  
-  <!-- FAQ Section -->
-  <section class="faq" id="faq">
-    <div class="container">
-      <div class="section-heading">
-        <h2>Frequently Asked Questions</h2>
-        <p>Got questions? We've got answers.</p>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          How long until I see results?
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="faq-answer">
-          Most pet parents notice improvements in digestion within 3-7 days, while behavioral benefits typically begin after 10-14 days of consistent use. For best results, we recommend using The Dog Edit™ daily for at least 30 days.
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          Is it safe for all dogs?
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="faq-answer">
-          Yes! The Dog Edit™ is formulated for dogs of all sizes, breeds, and ages. The chews are free from common allergens like chicken and dairy. As with any supplement, we always recommend consulting with your veterinarian before starting a new regimen, especially for dogs with existing health conditions.
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          What if my dog doesn't like it?
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="faq-answer">
-          We've formulated The Dog Edit™ to be tasty even for picky eaters. However, if your dog isn't a fan, we offer a 100% satisfaction guarantee. Just let us know within 30 days, and we'll refund your purchase — no questions asked and no need to return the product.
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          How many chews per day?
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="faq-answer">
-          Dosage depends on your dog's weight: Dogs under 25 lbs: 1 chew daily; 25-50 lbs: 2 chews daily; Over 50 lbs: 3 chews daily. Each bag contains 30 chews, so depending on your dog's size, one bag will last 10-30 days.
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-about">
-          <!-- Using Image 3 from your prompt - the logo -->
-          <div style="margin-bottom: 1rem;">
-            <svg viewBox="0 0 300 300" width="90" height="90" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="150" cy="150" r="140" fill="#A5D6A7"/>
-              <path d="M60 150C60 99.2 101.2 58 152 58C202.8 58 244 99.2 244 150C244 200.8 202.8 242 152 242C101.2 242 60 200.8 60 150Z" fill="#A5D6A7" stroke="#2E7D32" stroke-width="10"/>
-              <text x="65" y="95" font-family="Arial" font-size="28" font-weight="bold" fill="#2E7D32">WAGGING TAILS</text>
-              <text x="65" y="220" font-family="Arial" font-size="28" font-weight="bold" fill="#2E7D32">HAPPY BARKS</text>
-              <g transform="translate(130, 140) scale(0.8)">
-                <path d="M35,60 C35,60 37,52 31,46 C25,40 15,39 15,39 C15,39 18,35 18,27 C18,19 13,15 9,15 C5,15 -4,19 4,38 C12,57 17,58 17,58" fill="#F9F0D9" stroke="#2E7D32" stroke-width="3"/>
-                <circle cx="10" cy="23" r="2" fill="#2E7D32"/>
-                <path d="M20,58 C20,58 24,52 32,50 C40,48 48,50 48,50 C48,50 48,46 53,40 C58,34 64,33 66,35 C68,37 70,43 57,55 C44,67 37,66 37,66" fill="#F9F0D9" stroke="#2E7D32" stroke-width="3"/>
-                <path d="M17,58 C17,58 19,67 25,72 C31,77 37,75 37,75" fill="#F9F0D9" stroke="#2E7D32" stroke-width="3"/>
-                <path d="M37,66 C37,66 37,74 30,81 C23,88 16,85 16,85" fill="#F9F0D9" stroke="#2E7D32" stroke-width="3"/>
-                <circle cx="27" cy="33" r="12" fill="#81C784" stroke="#2E7D32" stroke-width="2"/>
-                <text x="18" y="38" font-family="Arial" font-size="12" font-weight="bold" fill="#2E7D32">ASTRO</text>
-              </g>
-            </svg>
-          </div>
-          <p>Premium supplements for happier, healthier dogs. Made with love in the USA.</p>
-          <div class="social-links">
-            <a href="#" class="social-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-            <a href="#" class="social-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M16 11.37C16.1234 12.2022 15.9813 13.0522 15.5938 13.799C15.2063 14.5458 14.5932 15.1514 13.8416 15.5297C13.0901 15.9079 12.2385 16.0396 11.4078 15.9059C10.5771 15.7723 9.80977 15.3801 9.21485 14.7852C8.61993 14.1902 8.22774 13.4229 8.09408 12.5922C7.96042 11.7615 8.09208 10.9099 8.47034 10.1584C8.8486 9.40685 9.4542 8.79374 10.201 8.40624C10.9478 8.01874 11.7978 7.87658 12.63 8C13.4789 8.12588 14.2649 8.52146 14.8717 9.1283C15.4785 9.73515 15.8741 10.5211 16 11.37Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="16.5" cy="7.5" r="1.5" fill="white"/>
-              </svg>
-            </a>
-            <a href="#" class="social-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M23 3.00005C22.0424 3.67552 20.9821 4.19216 19.86 4.53005C19.2577 3.83756 18.4573 3.34674 17.567 3.12397C16.6767 2.90121 15.7395 2.95724 14.8821 3.2845C14.0247 3.61176 13.2884 4.19445 12.773 4.95376C12.2575 5.71308 11.9877 6.61238 12 7.53005V8.53005C10.2426 8.57561 8.50127 8.18586 6.93101 7.39549C5.36074 6.60513 4.01032 5.43868 3 4.00005C3 4.00005 -1 13 8 17C5.94053 18.398 3.48716 19.099 1 19C10 24 21 19 21 7.50005C20.9991 7.2215 20.9723 6.94364 20.92 6.67005C21.9406 5.66354 22.6608 4.39276 23 3.00005Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-        
-        <div class="footer-nav">
-          <h3 class="footer-heading">Quick Links</h3>
-          <ul class="footer-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#benefits">Benefits</a></li>
-            <li><a href="#pricing">Shop</a></li>
-            <li><a href="#story">Our Story</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-support">
-          <h3 class="footer-heading">Support</h3>
-          <ul class="footer-links">
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Shipping Policy</a></li>
-            <li><a href="#">Return Policy</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-newsletter">
-          <h3 class="footer-heading">Join Our Pack</h3>
-          <p>Get tips, deals, and doggy wellness advice.</p>
-          <form>
-            <input type="email" placeholder="Your email" style="width: 100%; padding: 10px; border-radius: 5px; border: none; margin-bottom: 10px;">
-            <button type="submit" class="btn" style="width: 100%">Subscribe</button>
-          </form>
-        </div>
-      </div>
-      
-      <div class="copyright">
-        <p>&copy; 2025 Wagging Tails Happy Barks™ | The Dog Edit™ All Rights Reserved</p>
-      </div>
-    </div>
-  </footer>
+    </nav>
 
-  <!-- Sticky CTA -->
-  <a href="#pricing" class="sticky-cta">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M3 6H5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M10 11V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M14 11V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    Shop Now
-  </a>
+    <header id="home" class="pt-16 pb-20 md:pt-24 md:pb-28 bg-gradient-to-b from-white to-[#FEFBF6]">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+                    Happy Gut. <span class="text-orange-600">Calm Mind.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-lg mx-auto md:mx-0">
+                    A science-backed, 2-in-1 daily chew that supports healthy digestion & promotes calm behavior in dogs. Vet-reviewed and loved by pups everywhere.
+                </p>
+                <a href="#buy-now" class="cta-button inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out shadow-lg text-lg">
+                    Shop The Edit
+                </a>
+            </div>
+            <div class="hero-media rounded-lg overflow-hidden">
+                 <img src="dog-edit-cover.jpg" alt="The Dog Edit product pouch next to a happy golden retriever" class="w-full h-auto rounded-lg object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/FFF0E6/FF7300?text=The+Dog+Edit™';">
+            </div>
+        </div>
+    </header>
 
-  <!-- Simple JavaScript for the FAQ dropdowns -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // FAQ Toggle
-      const faqItems = document.querySelectorAll('.faq-item');
-      
-      faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        
-        question.addEventListener('click', () => {
-          item.classList.toggle('active');
-          
-          // Change the plus/minus icon
-          const icon = question.querySelector('svg');
-          
-          if (item.classList.contains('active')) {
-            icon.innerHTML = '<path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
-          } else {
-            icon.innerHTML = '<path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
-          }
-        });
-      });
-      
-      // Show the first FAQ item by default
-      if (faqItems.length > 0) {
-        faqItems[0].classList.add('active');
-        const firstIcon = faqItems[0].querySelector('.faq-question svg');
-        firstIcon.innerHTML = '<path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
-      }
-    });
-  </script>
-</body>
+    <div class="bg-orange-100 text-orange-800 py-3 overflow-hidden">
+        <div class="marquee-content whitespace-nowrap flex">
+            <span class="mx-8 font-medium">✨ Vet-Reviewed Formula</span>
+            <span class="mx-8 font-medium">🌿 Clean Label Ingredients</span>
+            <span class="mx-8 font-medium">🐾 Supports Gut Health & Calm</span>
+            <span class="mx-8 font-medium">💯 Satisfaction Guaranteed</span>
+             <span class="mx-8 font-medium">✨ Vet-Reviewed Formula</span>
+            <span class="mx-8 font-medium">🌿 Clean Label Ingredients</span>
+            <span class="mx-8 font-medium">🐾 Supports Gut Health & Calm</span>
+            <span class="mx-8 font-medium">💯 Satisfaction Guaranteed</span>
+        </div>
+    </div>
+
+    <section id="features" class="py-16 md:py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+                Why <span class="text-orange-600">The Dog Edit™</span> Works
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center transition duration-300 hover:shadow-xl">
+                     <div class="mb-4 inline-block p-3 bg-orange-100 rounded-full">
+                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.977l-.51.342a11.985 11.985 0 01-5.176 0l-.509-.342a6 6 0 00-3.86-.977l-2.387.477a2 2 0 00-1.022.547m16.44 0v.857a2 2 0 01-2 2H5.572a2 2 0 01-2-2v-.857m16.44 0L20.5 10.75M3.5 15.428L3.5 10.75m9.5 0v5.672a1 1 0 01-.723.962l-3.44 1.146a1 1 0 01-1.214-.862l-.378-3.405m10.874-5.672c.218.087.43.18.638.276l.51.229a1 1 0 01.723.962l.378 3.405a1 1 0 01-1.214.862l-3.44-1.146a1 1 0 01-.723-.962V10.75M12 10.75V4.75m0 0a2.5 2.5 0 015 0V10.75M12 4.75a2.5 2.5 0 00-5 0V10.75"></path></svg>
+                     </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Pumpkin Power</h3>
+                    <p class="text-gray-600">Naturally rich in fiber to support healthy digestion, firm stools, and overall gut wellness.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center transition duration-300 hover:shadow-xl">
+                     <div class="mb-4 inline-block p-3 bg-orange-100 rounded-full">
+                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                     </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Calming Chamomile</h3>
+                    <p class="text-gray-600">Gently promotes calm behavior during stress-inducing moments like travel, storms, or vet visits.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center transition duration-300 hover:shadow-xl">
+                     <div class="mb-4 inline-block p-3 bg-orange-100 rounded-full">
+                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                     </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Smart Postbiotics</h3>
+                    <p class="text-gray-600">Cutting-edge, heat-stable nutrients that support immune balance and gut lining integrity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-16 md:py-24 bg-gradient-to-b from-[#FEFBF6] to-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+                Pick Your <span class="text-orange-600">Perfect Plan</span>
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center border border-gray-200 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Try It Once</h3>
+                        <p class="text-3xl font-bold text-gray-900 mb-4">$29</p>
+                        <p class="text-gray-500 mb-6">One bag (30 chews)</p>
+                    </div>
+                    <a href="#buy-now" class="cta-button mt-4 block bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out shadow-sm">
+                        Get Started
+                    </a>
+                </div>
+                <div class="bg-orange-500 text-white p-8 rounded-xl shadow-2xl text-center border-2 border-orange-600 relative flex flex-col justify-between">
+                     <span class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-800 text-white text-xs font-bold px-3 py-1 rounded-full">Most Popular</span>
+                     <div>
+                        <h3 class="text-xl font-semibold mb-2">Subscribe & Save</h3>
+                        <p class="text-4xl font-extrabold mb-1">$24<span class="text-lg font-medium">/bag</span></p>
+                        <p class="text-orange-100 mb-6">Delivered monthly<br>Pause or cancel anytime</p>
+                     </div>
+                    <a href="#buy-now" class="cta-button mt-4 block bg-white hover:bg-gray-100 text-orange-600 font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out shadow-md">
+                        Subscribe Now
+                    </a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center border border-gray-200 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Bundle & Save</h3>
+                         <p class="text-3xl font-bold text-gray-900 mb-4">$79</p>
+                         <p class="text-gray-500 mb-6">Three bags (90 chews)</p>
+                     </div>
+                    <a href="#buy-now" class="cta-button mt-4 block bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out shadow-sm">
+                        Buy Bundle
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-[#FEFBF6]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-10">
+                <span class="text-orange-600">Bark</span> of Approval
+            </h2>
+            <div class="space-y-8">
+                <blockquote class="bg-white p-6 rounded-lg shadow-md max-w-2xl mx-auto">
+                    <p class="text-lg text-gray-700 italic mb-4">“My anxious pup is finally sleeping through storms thanks to The Dog Edit. And her poop? Perfect. Seriously, a game-changer for us!”</p>
+                    <footer class="text-gray-600 font-medium">– Rachel M. & Luna</footer>
+                </blockquote>
+                <blockquote class="bg-white p-6 rounded-lg shadow-md max-w-2xl mx-auto">
+                    <p class="text-lg text-gray-700 italic mb-4">“We noticed a difference within a week. Calmer walks, better digestion, and I love that there are zero weird fillers. Highly recommend!”</p>
+                    <footer class="text-gray-600 font-medium">– Jordan P. & Max</footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <section id="story" class="py-16 md:py-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Our <span class="text-orange-600">Story</span>
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+                We started The Dog Edit™ because we needed it for our own dogs. We wanted a clean, effective, science-backed supplement that tackled both gut health *and* anxious feelings – without compromise. We believe that when your dog feels better on the inside, their whole world (and yours) feels better on the outside. That's the simple truth behind Wagging Tails Happy Barks™.
+            </p>
+        </div>
+    </section>
+
+     <section id="buy-now" class="bg-orange-500 text-white py-16 md:py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready for a Happier, Healthier Pup?</h2>
+            <p class="text-lg md:text-xl text-orange-100 mb-8">
+                Give your dog the gift of a balanced gut and a calmer mind. Try The Dog Edit™ today!
+            </p>
+            <a href="#pricing" class="cta-button inline-block bg-white hover:bg-gray-100 text-orange-600 font-bold py-3 px-10 rounded-full transition duration-300 ease-in-out shadow-lg text-lg">
+                Choose Your Plan
+            </a>
+        </div>
+    </section>
+
+
+    <footer class="bg-gray-800 text-gray-400 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <img src="logo-2x.jpg" alt="Wagging Tails Happy Barrks logo with Astro the dog" class="h-16 mx-auto mb-6 rounded-full" onerror="this.onerror=null; this.src='https://placehold.co/150x150/374151/FEFBF6?text=Logo'; this.classList.remove('rounded-full');">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#features" class="hover:text-white transition duration-150">Features</a>
+                <a href="#pricing" class="hover:text-white transition duration-150">Pricing</a>
+                <a href="#story" class="hover:text-white transition duration-150">Our Story</a>
+                <a href="#" class="hover:text-white transition duration-150">FAQ</a>
+                <a href="#" class="hover:text-white transition duration-150">Contact</a>
+            </div>
+            <div class="flex justify-center space-x-4 mb-6">
+                <a href="#" aria-label="Instagram" class="hover:text-white transition duration-150">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.441c-3.142 0-3.499.011-4.717.066-2.803.128-4.001 1.306-4.129 4.129-.055 1.217-.066 1.574-.066 4.717s.011 3.499.066 4.717c.127 2.822 1.326 4.001 4.129 4.129 1.218.055 1.575.066 4.717.066s3.499-.011 4.717-.066c2.803-.128 4.001-1.306 4.129-4.129.055-1.217.066-1.574.066-4.717s-.011-3.499-.066-4.717c-.127-2.822-1.326-4.001-4.129-4.129-1.218-.055-1.575-.066-4.717-.066zm0 2.881c-1.955 0-3.531 1.576-3.531 3.531s1.576 3.531 3.531 3.531 3.531-1.576 3.531-3.531-1.576-3.531-3.531-3.531zm0 5.621c-1.166 0-2.109-.943-2.109-2.109s.943-2.109 2.109-2.109 2.109.943 2.109 2.109-.943 2.109-2.109 2.109zm4.611-5.436c-.76 0-1.376-.615-1.376-1.376s.616-1.376 1.376-1.376 1.376.616 1.376 1.376-.615 1.376-1.376 1.376z"></path></svg>
+                </a>
+                <a href="#" aria-label="Facebook" class="hover:text-white transition duration-150">
+                   <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.67 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.81C10.44 7.31 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10.01 10.01 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"></path></svg>
+                </a>
+            </div>
+            <p class="text-sm">&copy; 2025 Wagging Tails Happy Barks™ | The Dog Edit™. All Rights Reserved.</p>
+             <p class="text-xs mt-2">These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+        </div>
+    </footer>
+
+    </body>
 </html>

@@ -37,6 +37,7 @@
       video {
         max-width: 100%;
         height: auto;
+        display: block; /* Prevents extra space below video */
       }
     </style>
 </head>
@@ -81,7 +82,11 @@
                 </a>
             </div>
             <div class="hero-media rounded-lg overflow-hidden">
-                 <img src="dog-edit-cover.jpg" alt="The Dog Edit product pouch next to a happy golden retriever" class="w-full h-auto rounded-lg object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/FFF0E6/FF7300?text=The+Dog+Edit™';">
+                 <video autoplay muted loop playsinline poster="dog-edit-cover.jpg" class="w-full h-auto rounded-lg object-cover">
+                    <source src="hero-dog-loop.mp4" type="video/mp4">
+                    <img src="dog-edit-cover.jpg" alt="The Dog Edit product pouch next to a happy golden retriever" class="w-full h-auto rounded-lg object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/FFF0E6/FF7300?text=The+Dog+Edit™';">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </header>
@@ -215,7 +220,7 @@
 
     <footer class="bg-gray-800 text-gray-400 py-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <img src="logo-2x.jpg" alt="Wagging Tails Happy Barrks logo with Astro the dog" class="h-16 mx-auto mb-6 rounded-full" onerror="this.onerror=null; this.src='https://placehold.co/150x150/374151/FEFBF6?text=Logo'; this.classList.remove('rounded-full');">
+            <img src="logo-2x.png" alt="Wagging Tails Happy Barrks logo with Astro the dog" class="h-16 mx-auto mb-6 rounded-full" onerror="this.onerror=null; this.src='https://placehold.co/150x150/374151/FEFBF6?text=Logo.png'; this.classList.remove('rounded-full');">
             <div class="flex justify-center space-x-6 mb-6">
                 <a href="#features" class="hover:text-white transition duration-150">Features</a>
                 <a href="#pricing" class="hover:text-white transition duration-150">Pricing</a>

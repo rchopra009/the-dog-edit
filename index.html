@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The Dog Edit™ - A 2-in-1 daily chew for gut health and calm behavior. Clean-label. Vet-reviewed. Trusted by dog parents everywhere." />
   <title>The Dog Edit™ | Wagging Tails Happy Barks</title>
   <style>
     body {
@@ -10,176 +11,203 @@
       font-family: 'Helvetica Neue', sans-serif;
       background: #faf8f3;
       color: #222;
+      line-height: 1.6;
       scroll-behavior: smooth;
+    }
+    header, section {
+      padding: 4rem 1.5rem;
     }
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 1rem;
     }
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 0;
+      padding: 1rem 1.5rem;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
     nav a {
-      text-decoration: none;
       font-weight: bold;
       color: #222;
+      text-decoration: none;
     }
     .hero {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       gap: 2rem;
-      padding: 4rem 2rem 2rem;
     }
     .hero video {
       width: 100%;
       max-width: 500px;
       border-radius: 16px;
-      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
     }
     .hero h1 {
-      font-size: 2.8rem;
-      margin: 1rem 0 0.5rem;
+      font-size: 3rem;
+      margin-bottom: 1rem;
     }
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       max-width: 500px;
     }
-    .hero button {
-      margin-top: 1rem;
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      background-color: #ff7300;
+    .hero button, .cta-button {
+      margin-top: 1.5rem;
+      background: #ff7300;
       color: white;
+      font-weight: bold;
       border: none;
       border-radius: 999px;
+      padding: 1rem 2rem;
       cursor: pointer;
+      font-size: 1rem;
     }
-    .section {
-      padding: 4rem 2rem;
+    .section-title {
       text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
     }
-    .benefits {
+    .grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
-      margin-top: 2rem;
     }
     .card {
       background: white;
+      border-radius: 16px;
       padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-      width: 280px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+      width: 300px;
+      text-align: center;
     }
     .marquee {
-      margin: 3rem 0;
-      text-align: center;
-      font-weight: bold;
-      font-size: 1.1rem;
-      background: #fff3e5;
-      padding: 1rem;
-      white-space: nowrap;
+      background: #fff3e6;
       overflow: hidden;
-      animation: scroll 15s linear infinite;
+      white-space: nowrap;
+      font-weight: bold;
+      padding: 1rem 0;
+      font-size: 1.1rem;
+      animation: scroll 25s linear infinite;
     }
     @keyframes scroll {
       0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
-    .pricing, .testimonials, .story, .footer {
-      padding: 4rem 2rem;
+    .testimonial, .story {
       text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
     }
-    .footer {
+    footer {
+      text-align: center;
       font-size: 0.9rem;
       color: #888;
+      padding: 3rem 1rem;
     }
-    .footer img {
-      width: 100px;
+    footer img {
+      width: 90px;
       margin-top: 1rem;
+    }
+    .sticky-cta {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #222;
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.75rem 1.5rem;
+      font-weight: bold;
+      font-size: 1rem;
+      z-index: 1000;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <nav>
-      <a href="#">The Dog Edit™</a>
-      <a href="#story">Our Story</a>
-    </nav>
+  <nav>
+    <a href="#">The Dog Edit™</a>
+    <a href="#story">Our Story</a>
+  </nav>
 
-    <section class="hero">
-      <video autoplay loop muted playsinline>
-        <source src="hero_dog_breathing_loop.mp4" type="video/mp4" />
-      </video>
-      <div>
-        <h1>Happy Gut. Calm Mind.</h1>
-        <p>2-in-1 daily chew to support digestion and reduce stress — naturally.</p>
-        <button>Buy Now</button>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Why It Works</h2>
-      <div class="benefits">
-        <div class="card">
-          <h3>Pumpkin</h3>
-          <p>High in fiber to support digestion and firmer stools.</p>
-        </div>
-        <div class="card">
-          <h3>Chamomile</h3>
-          <p>Helps reduce stress & support natural calm.</p>
-        </div>
-        <div class="card">
-          <h3>Postbiotics</h3>
-          <p>Supports gut lining and immune balance.</p>
-        </div>
-      </div>
-    </section>
-
-    <div class="marquee">
-      332% growth in postbiotics · 70% of dog immunity lives in the gut · Chamomile supports calm · The Dog Edit™ works.
+  <header class="container hero">
+    <video autoplay muted loop playsinline>
+      <source src="hero_dog_breathing_loop.mp4" type="video/mp4">
+    </video>
+    <div>
+      <h1>Happy Gut. Calm Mind.</h1>
+      <p>A science-backed, 2-in-1 daily chew that supports digestion & reduces stress in dogs.</p>
+      <button>Buy Now</button>
     </div>
+  </header>
 
-    <section class="pricing">
-      <h2>Pick Your Plan</h2>
-      <div class="benefits">
-        <div class="card">
-          <h3>Try it Once</h3>
-          <p>$29 / 1 bag</p>
-        </div>
-        <div class="card">
-          <h3>Bundle & Save</h3>
-          <p>$79 / 3 bags</p>
-        </div>
-        <div class="card">
-          <h3>Subscribe & Save</h3>
-          <p>$24 / month – pause anytime</p>
-        </div>
+  <section class="container">
+    <h2 class="section-title">Why It Works</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Pumpkin</h3>
+        <p>High in fiber to support healthy digestion and firm stools.</p>
       </div>
-    </section>
+      <div class="card">
+        <h3>Chamomile</h3>
+        <p>Promotes calm behavior during stress-inducing moments like travel or fireworks.</p>
+      </div>
+      <div class="card">
+        <h3>Postbiotics</h3>
+        <p>Evidence-backed nutrients that support immune balance and gut lining health.</p>
+      </div>
+    </div>
+  </section>
 
-    <section class="testimonials">
-      <h2>Happy Tails</h2>
-      <p>“My anxious pup is noticeably calmer — and finally pooping like a champ.” – Emily R.</p>
-      <p>“We tried probiotics, pumpkin, calming treats... this is the only thing that worked.” – Josh & Luna</p>
-    </section>
-
-    <section class="story" id="story">
-      <h2>Our Story</h2>
-      <p>We built The Dog Edit™ because we couldn’t find a clean-label, science-backed product that supported both digestion and behavior. So we made it ourselves — with help from vets, nutritionists, and a few very picky dogs.</p>
-    </section>
-
-    <section class="footer">
-      <p>&copy; 2025 Wagging Tails Happy Barks™ | The Dog Edit™</p>
-      <img src="logo-2x.png" alt="Wagging Tails logo" />
-    </section>
+  <div class="marquee">
+    332% growth in postbiotics • 70% of immunity lives in the gut • Chamomile supports calm • The Dog Edit™ works •
   </div>
+
+  <section class="container">
+    <h2 class="section-title">Pick Your Plan</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Try It Once</h3>
+        <p>$29 / 1 bag</p>
+      </div>
+      <div class="card">
+        <h3>Bundle & Save</h3>
+        <p>$79 / 3 bags</p>
+      </div>
+      <div class="card">
+        <h3>Subscribe & Save</h3>
+        <p>$24 / month — pause or cancel anytime</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container testimonial">
+    <h2 class="section-title">Bark of Approval</h2>
+    <p>“My anxious pup is finally sleeping through storms. And her poop? Perfect.” – Rachel M.<br>
+       “Game changer. Calmer walks, better digestion, and zero fillers.” – Jordan & Max
+    </p>
+  </section>
+
+  <section class="container story" id="story">
+    <h2 class="section-title">Our Story</h2>
+    <p>We started The Dog Edit™ to solve a real need: a clean, science-backed dog supplement that actually does two things at once — soothe the gut and calm the mind. Because when your dog feels better inside, their world feels better outside.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Wagging Tails Happy Barks™ | The Dog Edit™</p>
+    <img src="logo-2x.png" alt="Logo" />
+  </footer>
+
+  <a href="#" class="sticky-cta">Start My Dog’s Plan</a>
 </body>
 </html>

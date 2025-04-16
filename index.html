@@ -83,28 +83,60 @@
       "name": "The Dog Edit™ Calming Gut Chews",
       "description": "A 2-in-1 daily chew for dogs combining postbiotics and pumpkin for gut health and immune support, with chamomile for natural calming and anxiety relief. Clean-label, vet-reviewed, and free from common allergens.",
       "image": [
-        "dog-edit-cover.jpg"
+        "dog-edit-cover.jpg" // Replace with actual image URL when live
        ],
       "brand": {
         "@type": "Brand",
         "name": "Wagging Tails Happy Barks"
       },
-      "sku": "TDE-CHEW-30", // Example SKU - replace with actual
-      "mpn": "TDE-CHEW-30", // Example MPN - replace with actual
-      // Add review schema later if you have reviews
-      // "aggregateRating": {
+      "sku": "TDE-CHEW-60", // Example SKU for 60 chew bag
+      "mpn": "TDE-CHEW-60", // Example MPN for 60 chew bag
+      // "aggregateRating": { // Add later
       //   "@type": "AggregateRating",
-      //   "ratingValue": "4.8", // Example
-      //   "reviewCount": "150"  // Example
+      //   "ratingValue": "4.8", "reviewCount": "150"
       // },
-      "offers": {
-        "@type": "Offer",
-        "url": "#pricing", // Link to pricing section or product page URL
-        "priceCurrency": "USD",
-        "price": "29.00", // Price for the 'Try It Once' option
-        "itemCondition": "https://schema.org/NewCondition",
-        "availability": "https://schema.org/InStock"
-      }
+      // Updated offers to reflect new pricing/quantities
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Try It Once (60 Chews)",
+          "url": "#pricing", // Link to the pricing section on this page
+          "priceCurrency": "USD",
+          "price": "29.00",
+          "sku": "TDE-CHEW-60",
+          "mpn": "TDE-CHEW-60",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Subscribe & Save (60 Chews Monthly)",
+          "url": "#pricing", // Link to the pricing section on this page
+          "priceCurrency": "USD",
+          "price": "24.00",
+          "priceSpecification": {
+             "@type": "UnitPriceSpecification",
+             "price": "24.00",
+             "priceCurrency": "USD",
+             "billingDuration": "P1M" // ISO 8601 duration for 1 month
+           },
+          "sku": "TDE-CHEW-60-SUB",
+          "mpn": "TDE-CHEW-60-SUB",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availability": "https://schema.org/InStock"
+        },
+         {
+          "@type": "Offer",
+          "name": "Bundle & Save (180 Chews)",
+          "url": "#pricing", // Link to the pricing section on this page
+          "priceCurrency": "USD",
+          "price": "79.00",
+          "sku": "TDE-CHEW-180",
+          "mpn": "TDE-CHEW-180",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availability": "https://schema.org/InStock"
+        }
+      ]
     }
     </script>
     <script type="application/ld+json">
@@ -311,7 +343,7 @@
                     <div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">Try It Once</h3>
                         <p class="text-3xl font-bold text-gray-900 mb-4">$29</p>
-                        <p class="text-gray-500 mb-6">One bag (30 chews)</p>
+                        <p class="text-gray-500 mb-6">One bag (60 chews)</p>
                     </div>
                     <a href="#buy-now" class="cta-button mt-4 block bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out shadow-sm">
                         Get Started
@@ -322,7 +354,7 @@
                      <div>
                         <h3 class="text-xl font-semibold mb-2">Subscribe & Save 17%</h3>
                         <p class="text-4xl font-extrabold mb-1">$24<span class="text-lg font-medium">/bag</span></p>
-                        <p class="text-orange-100 mb-6">Delivered monthly<br>Pause or cancel anytime</p>
+                        <p class="text-orange-100 mb-6">One bag (60 chews) delivered monthly<br>Pause or cancel anytime</p>
                      </div>
                     <a href="#buy-now" class="cta-button mt-4 block bg-white hover:bg-gray-100 text-orange-600 font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out shadow-md">
                         Subscribe Now
@@ -330,10 +362,9 @@
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-lg text-center border border-gray-200 flex flex-col justify-between hover:shadow-xl transition duration-300">
                     <div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Bundle & Save 11%</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Bundle & Save 9%</h3>
                          <p class="text-3xl font-bold text-gray-900 mb-4">$79</p>
-                         <p class="text-gray-500 mb-6">Three bags (90 chews)</p>
-                     </div>
+                         <p class="text-gray-500 mb-6">Three bags (180 chews)</p> </div>
                     <a href="#buy-now" class="cta-button mt-4 block bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out shadow-sm">
                         Buy Bundle
                     </a>

@@ -4,6 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pre-Order Confirmed! | The Dog Edit™</title>
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    // ** REPLACE {YOUR_PIXEL_ID} WITH YOUR ACTUAL META PIXEL ID **
+    fbq('init', '{YOUR_PIXEL_ID}');
+    fbq('track', 'PageView'); // Tracks page view for this Thank You page
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id={YOUR_PIXEL_ID}&ev=PageView&noscript=1" /></noscript>
+    <script async src="https://www.googletagmanager.com/gtag/js?id={YOUR_GA_MEASUREMENT_ID_OR_ADS_ID}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      // ** REPLACE {YOUR_GA_MEASUREMENT_ID_OR_ADS_ID} BELOW **
+      gtag('config', '{YOUR_GA_MEASUREMENT_ID_OR_ADS_ID}');
+    </script>
+    <script>
+      // ** Ensure Pixel base code is loaded before this **
+      fbq('track', 'Purchase', {
+        value: 14.50, // Pre-order price
+        currency: 'USD',
+        // content_ids: ['TDE-CHEW-3IN1-60-PRE'], // Optional: Pass product SKU
+        // content_type: 'product' // Optional
+      });
+    </script>
+    <script>
+      // ** Ensure Google base tag is loaded before this **
+      // ** You might need to pass transaction_id dynamically if possible, or use a placeholder method **
+      // ** Consult Google Ads / GA4 documentation for exact implementation **
+      gtag('event', 'purchase', {
+        "transaction_id": "PREORDER_" + new Date().getTime() + "_" + Math.random().toString(36).substr(2, 9), // Example placeholder ID
+        "value": 14.50, // Pre-order price
+        "currency": "USD",
+        "items": [{
+          "item_id": "TDE-CHEW-3IN1-60-PRE",
+          "item_name": "The Dog Edit 3-in-1 Chew (Pre-Order)",
+          "price": 14.50,
+          "quantity": 1
+        }]
+        // For Google Ads specific conversion tracking:
+        // Replace 'AW-YOUR_CONVERSION_ID/YOUR_CONVERSION_LABEL' with your actual Ads conversion details
+        // gtag('event', 'conversion', {
+        //     'send_to': 'AW-YOUR_CONVERSION_ID/YOUR_CONVERSION_LABEL',
+        //     'value': 14.50,
+        //     'currency': 'USD',
+        //     'transaction_id': 'PREORDER_' + new Date().getTime() + "_" + Math.random().toString(36).substr(2, 9) // Example placeholder ID
+        // });
+      });
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +70,7 @@
       body { font-family: 'Inter', sans-serif; background-color: #FEFBF6; color: #374151; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
       .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); }
     </style>
-    </head>
+</head>
 <body class="flex flex-col items-center justify-center min-h-screen p-6 text-center">
 
     <div class="max-w-xl">

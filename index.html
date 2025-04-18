@@ -1,27 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <!-- =====================
-         META & ANALYTICS TAGS
-         ===================== -->
-    <!-- Meta Pixel (replace PIXEL_ID) -->
-    <script>
-      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]; t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init','PIXEL_ID');
-      fbq('track','PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"/></noscript>
-
-    <!-- Google Tag (gtag.js – replace GA_MEASUREMENT_ID) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
-      gtag('config','GA_MEASUREMENT_ID');
-    </script>
-
-    <!-- ===================================================================== -->
-    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Pre-Order The Dog Edit™ 3-in-1 Daily Chew & Save 50%! Supports gut health, calm mood, and natural defense. Ships June 2025. Vet-reviewed, clean-label." />
@@ -30,51 +9,480 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- (rest of original <style> & json‑LD omitted for brevity; paste unchanged) -->
-</head>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <style>
+      /* Custom styles */
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #FEFBF6; /* Soft off-white background */
+        color: #374151; /* Dark gray text */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      /* Marquee Animation */
+      .marquee-content { animation: scroll 30s linear infinite; }
+      @keyframes scroll { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
+      /* Hero Media Shadow */
+      .hero-media { box-shadow: 0 20px 40px -10px rgba(255, 115, 0, 0.2); }
+      /* Button Hover Effect */
+      .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); }
+      /* Video Styling */
+      video { max-width: 100%; height: auto; display: block; }
+      /* FAQ Accordion Styling */
+      details > summary { list-style: none; cursor: pointer; position: relative; padding-right: 2rem; }
+      details > summary::-webkit-details-marker { display: none; }
+      details > summary::after { content: '+'; position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%); font-size: 1.5em; line-height: 1; font-weight: bold; transition: transform 0.2s ease-in-out; color: #fb923c; }
+      details[open] > summary::after { content: '−'; }
+      details summary:hover { color: #ea580c; }
+      /* Strikethrough styling */
+      .strike { text-decoration: line-through; color: #9ca3af; /* Lighter gray */}
+      /* Pre-order Badge */
+      .preorder-badge {
+        background-color: #dc2626; /* Red */
+        color: white;
+        font-size: 0.75rem; /* text-xs */
+        font-weight: bold;
+        padding: 0.25rem 0.75rem; /* py-1 px-3 */
+        border-radius: 9999px; /* rounded-full */
+        display: inline-block;
+        margin-bottom: 0.5rem; /* mb-2 */
+      }
+       /* Vet Reviewed Badge Style */
+      .vet-badge {
+        display: inline-flex;
+        align-items: center;
+        background-color: #e0f2fe; /* Light blue */
+        color: #0369a1; /* Darker blue */
+        font-size: 0.75rem; /* text-xs */
+        font-weight: 500;
+        padding: 0.25rem 0.75rem; /* py-1 px-3 */
+        border-radius: 9999px; /* rounded-full */
+      }
+      .vet-badge svg {
+        width: 1rem; /* h-4 */
+        height: 1rem; /* w-4 */
+        margin-right: 0.25rem; /* mr-1 */
+      }
+    </style>
 
-<body class="antialiased">
-    <!-- 🍊 ORIGINAL BODY CONTENT UNCHANGED (TRUNCATED FOR DEMO) -->
-
-    <!-- CTA BUTTON EXAMPLE WITH UTM -->
-    <a href="https://buy.stripe.com/8wM17OaIHdJv2vC6oo?utm_source=site&utm_medium=button&utm_campaign=fp_launch" target="_blank" rel="noopener noreferrer" class="cta-button bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-5 rounded-full transition duration-300 ease-in-out shadow-md text-sm">
-        Pre‑Order & Save 50%
-    </a>
-
-    <!-- ==================================== -->
-    <!-- OPTIONAL ↓ add this JS ONLY on /thank-you.html -->
-    <!--
-    <script>
-      fbq && fbq('track','Purchase',{currency:'USD',value:15});
-      gtag && gtag('event','purchase',{currency:'USD',value:15});
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "The Dog Edit™ 3-in-1 Daily Chew (Pre-Order)",
+      "description": "Pre-Order the first 3-in-1 daily chew supporting digestion, anxiety, and natural defenses. Ships June 2025. Save 50% now!",
+      "image": [ "dog-edit-cover.jpg" ], // Replace with actual URL
+      "brand": { "@type": "Brand", "name": "Wagging Tails Happy Barks" },
+      "sku": "TDE-CHEW-3IN1-60-PRE",
+      "mpn": "TDE-CHEW-3IN1-60-PRE",
+      // Add aggregateRating later
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Exclusive Pre-Order Offer (Save 50%)",
+          "url": "https://buy.stripe.com/8wM17OaIHdJv2vC6oo", // Corrected URL in Schema
+          "priceCurrency": "USD",
+          "price": "14.50",
+          "priceValidUntil": "2025-05-31", // Pre-Order End Date
+          "itemCondition": "https://schema.org/NewCondition",
+          "availability": "https://schema.org/PreOrder",
+          "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" },
+              "deliveryTime": {
+                  "@type": "ShippingDeliveryTime",
+                  "businessDays": {
+                      "@type": "OpeningHoursSpecification",
+                      "validFrom": "2025-06-01", // Ship Start Date
+                      "validThrough": "2025-06-15" // Ship End Date
+                  }
+              }
+          }
+        }
+      ]
+    }
     </script>
-    -->
-
-</body>
-</html>
-
-<!-- ===============
- THANK‑YOU PAGE
-===================
-Save the block below as public/thank-you.html (or React/Next route). This page is the Stripe redirect target.
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <title>Thank You!</title>
-  <!-- fire conversion events -->
-  <script>
-    fbq && fbq('track','Purchase',{currency:'USD',value:15});
-    gtag && gtag('event','purchase',{currency:'USD',value:15});
-  </script>
-  <style>body{font-family:Inter,sans-serif;text-align:center;padding:80px;background:#FEFBF6}h1{font-size:2rem;color:#374151}</style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+         { "@type": "Question", "name": "When will my pre-order ship?", "acceptedAnswer": { "@type": "Answer", "text": "Pre-orders are expected to ship in June 2025. We'll keep you updated via email as we get closer to the shipping date. Thank you for being one of our first supporters!" } },
+        { "@type": "Question", "name": "How long until I see results?", "acceptedAnswer": { "@type": "Answer", "text": "Most pet parents notice improvements in digestion (like firmer stools) within 3-7 days of starting daily use. Behavioral benefits (like reduced anxiety) typically become noticeable after 10-14 days of consistent daily use. For optimal results, we recommend using The Dog Edit™ daily for at least 30 days as gut balance, calm, and immune support build over time." } },
+        { "@type": "Question", "name": "Is it safe for all dogs?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! The Dog Edit™ is formulated using natural ingredients generally considered safe for dogs of all sizes, breeds, and ages (check with your vet for puppies under 12 weeks). Our chews are specifically made without common allergens like chicken, beef, soy, wheat, corn, or dairy. As with any supplement, we recommend consulting your veterinarian if your dog has a pre-existing health condition, is pregnant/nursing, or is on medication." } },
+        { "@type": "Question", "name": "How many chews should I give my dog?", "acceptedAnswer": { "@type": "Answer", "text": "Give chews daily based on your dog's weight:\n- Up to 25 lbs: 1 Chew Daily\n- 26 - 75 lbs: 2 Chews Daily\n- Over 75 lbs: 3 Chews Daily\nChews can be given as a treat or crumbled over food. Always provide fresh water." } },
+        { "@type": "Question", "name": "What if my dog doesn't like it? (Satisfaction Guarantee)", "acceptedAnswer": { "@type": "Answer", "text": "We want you and your pup to be happy! We offer a 100% Satisfaction Guarantee, even on pre-orders. If you're not satisfied with the results after trying The Dog Edit™ for 30 days once you receive it, please contact our customer support team within 60 days of receiving your order for a full refund." } },
+        { "@type": "Question", "name": "What are Postbiotics? How are they different from Probiotics?", "acceptedAnswer": { "@type": "Answer", "text": "Probiotics are live beneficial bacteria. Postbiotics are the beneficial compounds produced by probiotics during fermentation. Postbiotics deliver many of the same gut and immune benefits but are not alive, making them more stable (especially in chews) and often easier for sensitive systems to tolerate. We use postbiotics for consistent, reliable gut support." } },
+        { "@type": "Question", "name": "What does Neem do for dogs?", "acceptedAnswer": { "@type": "Answer", "text": "Neem is a natural, plant-based immune booster traditionally used in Ayurvedic medicine. It supports your dog’s defenses and helps repel pests like ticks, fleas, and worms naturally from the inside out." } },
+        { "@type": "Question", "name": "Is it safe to combine all three benefits in one chew?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! We worked with formulators and veterinarians to create a safe, balanced blend where each active ingredient supports a different system (gut, nervous system, immune system) without negative interactions or overload at the recommended dosage." } },
+        { "@type": "Question", "name": "Can I give this daily?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. This chew is designed to be a daily wellness ritual, not just a temporary fix. Regular, consistent use helps build gut balance, reduce anxiety, and support immune resilience over time for long-term health benefits." } },
+        { "@type": "Question", "name": "Why not just use a flea/tick collar or pill?", "acceptedAnswer": { "@type": "Answer", "text": "Topical treatments and chemical pills primarily target pests externally or after they bite. The Dog Edit™ focuses on long-term wellness by supporting your dog’s *internal defenses* naturally with Neem. Think of it as strengthening their system from within. Many parents use both approaches for comprehensive protection." } }
+      ]
+    }
+    </script>
 </head>
-<body>
-  <h1>🎉 Thanks! Your Founding Pup bag ships in June.</h1>
-  <p>Receipt is in your inbox. We’ll share shipping updates soon.</p>
-</body>
-</html>
+<body class="antialiased">
 
--->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                     <img src="logo-2x.png" alt="The Dog Edit Logo" class="h-10 w-auto mr-2 rounded-full" onerror="this.onerror=null; this.src='https://placehold.co/40x40/374151/FEFBF6?text=DE'; this.classList.remove('rounded-full');">
+                    <a href="#home" class="text-xl md:text-2xl font-bold text-orange-600">The Dog Edit™</a>
+                    <span class="vet-badge hidden lg:inline-flex ml-3"> <svg class="w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                        Vet Reviewed
+                    </span>
+                </div>
+                <div class="hidden md:flex items-center space-x-5 lg:space-x-6">
+                    <a href="#benefits" class="text-gray-600 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">Benefits</a>
+                    <a href="#who-its-for" class="text-gray-600 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">Who It's For</a>
+                    <a href="#why-it-works" class="text-gray-600 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">Why It Works</a>
+                    <a href="#science-details" class="text-gray-600 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">The Proof</a>
+                    <a href="#faq" class="text-gray-600 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">FAQ</a>
+                    <a href="#reviews" class="text-gray-600 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">Reviews</a>
+                    <a href="https://buy.stripe.com/8wM17OaIHdJv2vC6oo" target="_blank" rel="noopener noreferrer" class="cta-button bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-5 rounded-full transition duration-300 ease-in-out shadow-md text-sm">
+                        Pre-Order & Save 50%
+                    </a>
+                </div>
+                 <div class="md:hidden">
+                     <button class="text-gray-500 hover:text-orange-600 focus:outline-none focus:text-orange-600">
+                         <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                         </svg>
+                     </button>
+                 </div>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="pt-16 pb-20 md:pt-24 md:pb-28 bg-gradient-to-b from-white to-[#FEFBF6]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+            <div class="text-center md:text-left">
+                 <span class="preorder-badge">Exclusive Pre-Order</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+                   Pre-Order & <span class="text-red-600">Save 50%</span>: Gut, Calm & Protect Arrives June!
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-lg mx-auto md:mx-0">
+                    Be the first to get our revolutionary 3-in-1 daily chew. Lock in your exclusive 50% discount now – it's the smartest way to try The Dog Edit™. <span class="font-semibold">Ships June 2025.</span> Worth the short wait for long-term wellness!
+                </p>
+                 <a href="https://buy.stripe.com/8wM17OaIHdJv2vC6oo" target="_blank" rel="noopener noreferrer" class="cta-button inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out shadow-lg text-lg">
+                    Pre-Order Now & Save 50%
+                </a>
+                 <p class="mt-4 text-sm text-gray-500 flex items-center justify-center md:justify-start flex-wrap gap-x-3 gap-y-1">
+                    <span>Clean-label formula</span> | <span>Allergen-Free</span>
+                    <span class="vet-badge">
+                         <svg class="w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                        Vet Reviewed
+                    </span>
+                 </p>
+            </div>
+            <div class="hero-media rounded-lg overflow-hidden">
+                <video autoplay muted loop playsinline poster="dog-edit-cover.jpg" class="w-full h-auto rounded-lg object-cover">
+                    <source src="hero-dog-loop.mp4" type="video/mp4">
+                    <img src="dog-edit-cover.jpg" alt="Happy golden retriever relaxing next to The Dog Edit product pouch" class="w-full h-auto rounded-lg object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/FFF0E6/FF7300?text=The+Dog+Edit™';">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </header>
+
+    <div class="bg-orange-100 text-orange-800 py-3 overflow-hidden">
+        <div class="marquee-content whitespace-nowrap flex">
+            <span class="mx-6 md:mx-8 font-medium">✅ Healthy Digestion</span>
+            <span class="mx-6 md:mx-8 font-medium">😌 Calm Mood Support</span>
+            <span class="mx-6 md:mx-8 font-medium">🛡️ Natural Defense Boost</span>
+            <span class="mx-6 md:mx-8 font-medium">🌿 Plant-Based Ingredients</span>
+            <span class="mx-6 md:mx-8 font-medium">🔬 Postbiotic Power</span>
+            <span class="mx-6 md:mx-8 font-medium">🐜 Natural Pest Deterrent (Neem)</span>
+            <span class="mx-6 md:mx-8 font-medium">💯 Satisfaction Guaranteed</span>
+             <span class="mx-6 md:mx-8 font-medium">✅ Healthy Digestion</span>
+            <span class="mx-6 md:mx-8 font-medium">😌 Calm Mood Support</span>
+            <span class="mx-6 md:mx-8 font-medium">🛡️ Natural Defense Boost</span>
+            <span class="mx-6 md:mx-8 font-medium">🌿 Plant-Based Ingredients</span>
+            <span class="mx-6 md:mx-8 font-medium">🔬 Postbiotic Power</span>
+            <span class="mx-6 md:mx-8 font-medium">🐜 Natural Pest Deterrent (Neem)</span>
+            <span class="mx-6 md:mx-8 font-medium">💯 Satisfaction Guaranteed</span>
+        </div>
+    </div>
+
+    <section id="benefits" class="py-16 md:py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"> One Chew, <span class="text-orange-600">Triple Benefits</span>
+            </h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="text-center">
+                    <div class="mb-4 inline-block p-4 bg-emerald-100 rounded-full">
+                         <svg class="w-10 h-10 text-emerald-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Gut + Immune</h3>
+                    <p class="text-gray-600">Pumpkin & postbiotics support healthy digestion, nutrient absorption, and immune balance through the gut microbiome.</p>
+                </div>
+                 <div class="text-center">
+                     <div class="mb-4 inline-block p-4 bg-yellow-100 rounded-full">
+                         <svg class="w-10 h-10 text-yellow-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Calm + Mood</h3>
+                    <p class="text-gray-600">Chamomile helps your pup relax during fireworks, car rides, or stressful separation. A calmer belly supports a calmer brain.</p>
+                </div>
+                 <div class="text-center">
+                     <div class="mb-4 inline-block p-4 bg-blue-100 rounded-full">
+                         <svg class="w-10 h-10 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Protect + Defend</h3>
+                    <p class="text-gray-600">Neem — a time-tested Ayurvedic herb — supports your dog’s natural immunity and helps defend against ticks, fleas, and worms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="who-its-for" class="py-16 md:py-24 bg-orange-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+                Is The Dog Edit™ Right for <span class="text-orange-600">Your Pup?</span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-x-12 gap-y-6 text-lg">
+                <div class="flex items-start">
+                    <svg class="flex-shrink-0 h-6 w-6 text-orange-600 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                    <span>Dogs with sensitive stomachs or occasional digestive upset (loose stool, gas).</span>
+                </div>
+                <div class="flex items-start">
+                     <svg class="flex-shrink-0 h-6 w-6 text-orange-600 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                    <span>Pups experiencing stress from travel, storms, separation, or vet visits.</span>
+                </div>
+                 <div class="flex items-start">
+                    <svg class="flex-shrink-0 h-6 w-6 text-orange-600 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                    <span>Owners seeking natural immune support and parasite defense.</span>
+                </div>
+                 <div class="flex items-start">
+                    <svg class="flex-shrink-0 h-6 w-6 text-orange-600 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                    <span>Dogs with common protein allergies (formula is free from chicken, beef, soy).</span>
+                </div>
+                 <div class="flex items-start">
+                    <svg class="flex-shrink-0 h-6 w-6 text-orange-600 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                    <span>Health-conscious parents wanting clean-label ingredients without fillers or synthetics.</span>
+                </div>
+                 <div class="flex items-start">
+                    <svg class="flex-shrink-0 h-6 w-6 text-orange-600 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                    <span>Anyone looking to <span class="font-semibold">simplify</span> their dog's supplement routine with one powerful chew.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-it-works" class="py-16 md:py-24 bg-emerald-800 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                Rooted in Nature. <span class="text-emerald-300">Backed by Science.</span>
+            </h2>
+             <p class="text-lg text-emerald-200 mb-6 leading-relaxed">
+                Our 3-in-1 formula combines the best of modern nutrition and ancient wellness practices. Postbiotics & pumpkin nourish the gut. Chamomile calms the nervous system. Neem reinforces immunity & naturally repels parasites.
+             </p>
+             <p class="text-lg text-emerald-200 mb-6 leading-relaxed">
+                Each ingredient is chosen for <span class="font-semibold">synergistic support</span> across your dog's key wellness systems.
+             </p>
+             <p class="text-lg text-emerald-200 leading-relaxed">
+                We skipped the fillers, synthetics, and sedatives. What remains is clean, focused, and effective.
+             </p>
+        </div>
+    </section>
+
+    <section id="science-details" class="py-16 md:py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+                The <span class="text-orange-600">Proof</span> Behind The Edit
+            </h2>
+            <ul class="space-y-6 text-lg text-gray-700 max-w-2xl mx-auto">
+                <li class="flex items-start">
+                    <svg class="flex-shrink-0 h-6 w-6 text-emerald-600 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <span><span class="font-semibold">Gut Health is Key:</span> 70% of a dog’s immune system lives in the gut.</span>
+                </li>
+                 <li class="flex items-start">
+                    <svg class="flex-shrink-0 h-6 w-6 text-emerald-600 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <span><span class="font-semibold">Postbiotic Power:</span> Help support digestive balance and strengthen immune response.</span>
+                </li>
+                 <li class="flex items-start">
+                    <svg class="flex-shrink-0 h-6 w-6 text-emerald-600 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <span><span class="font-semibold">Natural Calm:</span> Chamomile has been shown to reduce stress-related behaviors in dogs.</span>
+                </li>
+                 <li class="flex items-start">
+                    <svg class="flex-shrink-0 h-6 w-6 text-emerald-600 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <span><span class="font-semibold">Ancient Wisdom (Neem):</span> Supports immune modulation and is used traditionally to defend against parasites like ticks and fleas.</span>
+                </li>
+                 <li class="flex items-start">
+                    <svg class="flex-shrink-0 h-6 w-6 text-emerald-600 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <span><span class="font-semibold">Gut-Brain Axis:</span> A healthy gut can reduce anxiety by influencing serotonin production.</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-16 md:py-24 bg-gradient-to-b from-[#FEFBF6] to-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+                Be the First & <span class="text-red-600">Save 50%!</span>
+            </h2>
+            <p class="text-center text-lg text-gray-600 mb-12">Exclusive Pre-Order Offer - Ships June 2025</p>
+
+            <div class="max-w-md mx-auto bg-white p-8 rounded-xl shadow-2xl border-2 border-red-600 text-center">
+                 <span class="preorder-badge">Pre-Order Exclusive</span>
+                 <h3 class="text-2xl font-semibold text-gray-800 mb-2">The Dog Edit™ 3-in-1 Chew</h3>
+                 <p class="text-4xl font-bold text-red-600 mb-1">$14.50</p>
+                 <p class="text-lg text-gray-500 mb-4"><span class="strike text-xl">$29</span> <span class="font-extrabold text-red-600 text-xl">(Save 50%!)</span></p>
+                 <p class="text-gray-600 mb-1">One bag (60 chews)</p>
+                 <p class="text-xs text-gray-500 mb-4">Just $0.24/day for total wellness!</p>
+                 <p class="text-sm text-emerald-600 font-medium mb-4">+ Free Happy Gut Guide PDF!</p>
+                 <p class="text-gray-700 font-semibold mb-2">Estimated Ship Date: June 2025</p>
+                 <p class="text-sm font-semibold text-red-600 mb-2">Only 500 Pre-Order Spots Available!</p>
+                 <p class="text-xs text-red-600 font-medium mb-6">Pre-order offer ends May 31st!</p>
+                 <p class="text-xs text-emerald-700 mb-4 flex items-center justify-center">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    60-Day Satisfaction Guarantee
+                 </p>
+                 <a href="https://buy.stripe.com/8wM17OaIHdJv2vC6oo" target="_blank" rel="noopener noreferrer" class="cta-button w-full block bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-6 rounded-full transition duration-300 ease-in-out shadow-lg text-lg">
+                     Pre-Order Now & Save 50%
+                 </a>
+                 <p class="text-xs text-gray-500 mt-4">Limited time pre-order offer. You will be charged now. Ships June 2025.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="py-16 md:py-24 bg-[#FEFBF6]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-10">
+                Hear From Our <span class="text-orange-600">Founding Pups!</span> (Coming June!)
+            </h2>
+            <p class="text-lg text-gray-600 mb-8">Be the first to experience the 3-in-1 difference! ✨ Hear what our early adopters say starting this June. Pre-order now and get ready to share your pup's success story!</p>
+            </div>
+    </section>
+
+    <section id="story" class="py-16 md:py-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Why We Created <span class="text-orange-600">The Dog Edit™</span>
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed mb-4">
+                We were tired of giving our dogs 3 different supplements for digestion, stress, and parasite defense. So we made one that does it all — using real, effective ingredients from nature.
+            </p>
+             <p class="text-lg text-gray-600 leading-relaxed">
+                Inspired by Ayurvedic traditions and modern gut science, The Dog Edit™ is our way of simplifying dog wellness. One chew. Three systems supported. No synthetics. No fluff. Just functional care made with love, <span class="font-semibold">from fellow dog parents who get it.</span> </p>
+        </div>
+    </section>
+
+    <section id="faq" class="py-16 md:py-24 bg-gradient-to-b from-white to-[#FEFBF6]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+                Frequently Asked Questions
+            </h2>
+            <p class="text-center text-gray-600 text-lg mb-12">Got questions? We've got answers.</p>
+
+            <div class="space-y-4">
+                 <details class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 transition duration-300 ease-in-out hover:shadow-md">
+                    <summary class="font-semibold text-lg text-gray-800">When will my pre-order ship?</summary>
+                    <div class="mt-4 text-gray-600 leading-relaxed">
+                        Pre-orders are expected to begin shipping in June 2025. We are working hard to get The Dog Edit™ to you and your pup as soon as possible! We'll send you an email notification with tracking information once your order ships. Thank you for your early support!
+                    </div>
+                </details>
+                 <details class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 transition duration-300 ease-in-out hover:shadow-md">
+                    <summary class="font-semibold text-lg text-gray-800">What does Neem do for dogs?</summary>
+                    <div class="mt-4 text-gray-600 leading-relaxed">
+                        Neem is a natural, plant-based immune booster traditionally used in Ayurvedic medicine. It supports your dog’s defenses and helps repel pests like ticks, fleas, and worms naturally from the inside out.
+                    </div>
+                </details>
+                 <details class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 transition duration-300 ease-in-out hover:shadow-md">
+                    <summary class="font-semibold text-lg text-gray-800">Is it safe to combine all three benefits in one chew?</summary>
+                    <div class="mt-4 text-gray-600 leading-relaxed">
+                        Yes! We worked with formulators and veterinarians to create a safe, balanced blend where each active ingredient supports a different system (gut, nervous system, immune system) without negative interactions or overload at the recommended dosage.
+                    </div>
+                </details>
+                 <details class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 transition duration-300 ease-in-out hover:shadow-md">
+                    <summary class="font-semibold text-lg text-gray-800">Can I give this daily?</summary>
+                    <div class="mt-4 text-gray-600 leading-relaxed">
+                        Absolutely. This chew is designed to be a daily wellness ritual, not just a temporary fix. Regular, consistent use helps build gut balance, reduce anxiety, and support immune resilience over time for long-term health benefits.
+                    </div>
+                </details>
+                 <details class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 transition duration-300 ease-in-out hover:shadow-md">
+                    <summary class="font-semibold text-lg text-gray-800">Why not just use a flea/tick collar or pill?</summary>
+                    <div class="mt-4 text-gray-600 leading-relaxed">
+                        Topical treatments and chemical pills primarily target pests externally or after they bite. The Dog Edit™ focuses on long-term wellness by supporting your dog’s *internal defenses* naturally with Neem. Think of it as strengthening their system from within. Many parents use both approaches for comprehensive protection.
+                    </div>
+                </details>
+                <details class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 transition duration-300 ease-in-out hover:shadow-md">
+                    <summary class="font-semibold text-lg text-gray-800">How long until I see results (after starting)?</summary> <div class="mt-4 text-gray-600 leading-relaxed">
+                        Most pet parents notice improvements in digestion (like firmer stools) within 3-7 days of starting daily use. Behavioral benefits (like reduced anxiety) typically become noticeable after 10-14 days of consistent daily use. For optimal results, we recommend using The Dog Edit™ daily for at least 30 days as gut balance, calm, and immune support build over time.
+                    </div>
+                </details>
+                 <details class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 transition duration-300 ease-in-out hover:shadow-md">
+                    <summary class="font-semibold text-lg text-gray-800">Is it safe for all dogs (besides the combo)?</summary>
+                    <div class="mt-4 text-gray-600 leading-relaxed">
+                        Yes! The Dog Edit™ is formulated using natural ingredients generally considered safe for dogs of all sizes, breeds, and ages (check with your vet for puppies under 12 weeks). Our chews are specifically made without common allergens like chicken, beef, soy, wheat, corn, or dairy. As with any supplement, we recommend consulting your veterinarian if your dog has a pre-existing health condition, is pregnant/nursing, or is on medication.
+                    </div>
+                </details>
+                 <details class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 transition duration-300 ease-in-out hover:shadow-md">
+                    <summary class="font-semibold text-lg text-gray-800">How many chews should I give my dog?</summary>
+                    <div class="mt-4 text-gray-600 leading-relaxed">
+                        Give chews daily based on your dog's weight:
+                        <ul class="list-disc list-inside mt-2 ml-4">
+                            <li>Up to 25 lbs: 1 Chew Daily</li>
+                            <li>26 - 75 lbs: 2 Chews Daily</li>
+                            <li>Over 75 lbs: 3 Chews Daily</li>
+                        </ul>
+                         Chews can be given as a treat or crumbled over food. Always provide fresh water.
+                    </div>
+                </details>
+                 <details class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 transition duration-300 ease-in-out hover:shadow-md">
+                    <summary class="font-semibold text-lg text-gray-800">What if my dog doesn't like it? (Satisfaction Guarantee)</summary>
+                    <div class="mt-4 text-gray-600 leading-relaxed">
+                        We want you and your pup to be happy! We offer a 100% Satisfaction Guarantee, even on pre-orders. If you're not satisfied with the results after trying The Dog Edit™ for 30 days once you receive it, please contact our customer support team within 60 days of receiving your order for a full refund. We're confident your dog will love the taste and benefits!
+                    </div>
+                </details>
+                 <details class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 transition duration-300 ease-in-out hover:shadow-md">
+                    <summary class="font-semibold text-lg text-gray-800">What are Postbiotics? How are they different from Probiotics?</summary>
+                    <div class="mt-4 text-gray-600 leading-relaxed">
+                        Great question! Probiotics are live beneficial bacteria. Postbiotics are the beneficial compounds (like short-chain fatty acids and enzymes) that are *produced* by probiotics during fermentation. Postbiotics deliver many of the same gut and immune benefits but are not alive, making them more stable (especially in chews) and often easier for sensitive systems to tolerate. We use postbiotics for consistent, reliable gut support.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="guarantee" class="bg-emerald-50 py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+             <div class="inline-block p-3 bg-emerald-200 rounded-full mb-4">
+                <svg class="w-8 h-8 text-emerald-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+             </div>
+            <h2 class="text-2xl md:text-3xl font-bold text-emerald-900 mb-3">Pre-Order with Confidence!</h2> <p class="text-lg text-emerald-700 mb-6">Your trust matters. Our 60-Day Satisfaction Guarantee applies fully to pre-orders. If you're not 100% happy after 30 days of use (once your order ships), contact us for a full refund. No hoops, no hassle.</p> <a href="https://buy.stripe.com/8wM17OaIHdJv2vC6oo" target="_blank" rel="noopener noreferrer" class="cta-button inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out shadow-md text-lg">
+                Secure Your 50% Discount Now
+            </a>
+        </div>
+    </section>
+
+
+     <section id="buy-now" class="bg-orange-500 text-white py-16 md:py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Be First. Save Big. Help Your Pup Thrive.</h2>
+            <p class="text-lg md:text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
+                Pre-order the revolutionary 3-in-1 chew today and lock in your exclusive 50% discount. Give your dog the gift of gut health, calm, and natural defense. Ships June 2025.
+            </p>
+             <a href="https://buy.stripe.com/8wM17OaIHdJv2vC6oo" target="_blank" rel="noopener noreferrer" class="cta-button inline-block bg-white hover:bg-gray-100 text-orange-600 font-bold py-3 px-10 rounded-full transition duration-300 ease-in-out shadow-lg text-lg">
+                Pre-Order Now & Save 50%
+            </a>
+        </div>
+    </section>
+
+
+    <footer class="bg-gray-800 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <img src="logo-2x.png" alt="Wagging Tails Happy Barrks logo with Astro the dog" class="h-16 mx-auto mb-4 rounded-full" onerror="this.onerror=null; this.src='https://placehold.co/150x150/374151/FEFBF6?text=Logo.png'; this.classList.remove('rounded-full');">
+             <p class="text-sm text-orange-300 mb-6 italic">Happy Belly. Peaceful Pup. Protected Naturally.</p>
+            <div class="flex justify-center flex-wrap gap-x-4 gap-y-2 md:gap-x-6 mb-6">
+                <a href="#benefits" class="hover:text-white transition duration-150">Benefits</a>
+                 <a href="#who-its-for" class="hover:text-white transition duration-150">Who It's For</a>
+                <a href="#why-it-works" class="hover:text-white transition duration-150">Why It Works</a>
+                <a href="#science-details" class="hover:text-white transition duration-150">The Proof</a>
+                <a href="#pricing" class="hover:text-white transition duration-150">Pre-Order</a>
+                 <a href="#reviews" class="hover:text-white transition duration-150">Reviews</a>
+                <a href="#faq" class="hover:text-white transition duration-150">FAQ</a>
+                <a href="#story" class="hover:text-white transition duration-150">Our Story</a>
+                <a href="#" class="hover:text-white transition duration-150">Contact</a>
+            </div>
+            <div class="flex justify-center space-x-4 mb-6">
+                <a href="#" aria-label="The Dog Edit on Instagram" class="hover:text-white transition duration-150">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.441c-3.142 0-3.499.011-4.717.066-2.803.128-4.001 1.306-4.129 4.129-.055 1.217-.066 1.574-.066 4.717s.011 3.499.066 4.717c.127 2.822 1.326 4.001 4.129 4.129 1.218.055 1.575.066 4.717.066s3.499-.011 4.717-.066c2.803-.128 4.001-1.306 4.129-4.129.055-1.217.066-1.574.066-4.717s-.011-3.499-.066-4.717c-.127-2.822-1.326-4.001-4.129-4.129-1.218-.055-1.575-.066-4.717-.066zm0 2.881c-1.955 0-3.531 1.576-3.531 3.531s1.576 3.531 3.531 3.531 3.531-1.576 3.531-3.531-1.576-3.531-3.531-3.531zm0 5.621c-1.166 0-2.109-.943-2.109-2.109s.943-2.109 2.109-2.109 2.109.943 2.109 2.109-.94

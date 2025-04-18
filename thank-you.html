@@ -20,16 +20,17 @@
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id={YOUR_PIXEL_ID}&ev=PageView&noscript=1" /></noscript>
-    <script async src="https://www.googletagmanager.com/gtag/js?id={YOUR_GA_MEASUREMENT_ID_OR_ADS_ID}"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KS8RWJLVRF"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      // ** REPLACE {YOUR_GA_MEASUREMENT_ID_OR_ADS_ID} BELOW **
-      gtag('config', '{YOUR_GA_MEASUREMENT_ID_OR_ADS_ID}');
+      // Corrected ID used below
+      gtag('config', 'G-KS8RWJLVRF');
     </script>
     <script>
       // ** Ensure Pixel base code is loaded before this **
+      // ** REPLACE {YOUR_PIXEL_ID} if not already done above **
       fbq('track', 'Purchase', {
         value: 14.50, // Pre-order price
         currency: 'USD',
@@ -41,6 +42,8 @@
       // ** Ensure Google base tag is loaded before this **
       // ** You might need to pass transaction_id dynamically if possible, or use a placeholder method **
       // ** Consult Google Ads / GA4 documentation for exact implementation **
+      // ** REPLACE {YOUR_GA_MEASUREMENT_ID_OR_ADS_ID} if not already done above **
+      // ** REPLACE AW-YOUR_CONVERSION_ID/YOUR_CONVERSION_LABEL with actual Ads conversion info if using Ads **
       gtag('event', 'purchase', {
         "transaction_id": "PREORDER_" + new Date().getTime() + "_" + Math.random().toString(36).substr(2, 9), // Example placeholder ID
         "value": 14.50, // Pre-order price
@@ -51,14 +54,8 @@
           "price": 14.50,
           "quantity": 1
         }]
-        // For Google Ads specific conversion tracking:
-        // Replace 'AW-YOUR_CONVERSION_ID/YOUR_CONVERSION_LABEL' with your actual Ads conversion details
-        // gtag('event', 'conversion', {
-        //     'send_to': 'AW-YOUR_CONVERSION_ID/YOUR_CONVERSION_LABEL',
-        //     'value': 14.50,
-        //     'currency': 'USD',
-        //     'transaction_id': 'PREORDER_' + new Date().getTime() + "_" + Math.random().toString(36).substr(2, 9) // Example placeholder ID
-        // });
+        // For Google Ads specific conversion tracking (Uncomment and configure if needed):
+        // , 'send_to': 'AW-YOUR_CONVERSION_ID/YOUR_CONVERSION_LABEL'
       });
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
